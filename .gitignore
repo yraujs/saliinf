@@ -1,0 +1,24 @@
+# Arquivos com senhas e segredos
+.env
+.env.*
+!.env.example
+application-local.properties
+application-secret.properties
+secrets.properties
+
+# Arquivos gerados pelo Java
+**/target/
+*.class
+*.log
+
+# Dependências e arquivos gerados do frontend
+**/node_modules/
+**/dist/
+
+# Arquivos temporários
+.DS_Store
+Thumbs.db
+
+# Configurações pessoais do VS Code
+.vscode/*
+!.vscode/extensions.json
