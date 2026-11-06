@@ -1,4 +1,4 @@
-# Arquivos com senhas e segredos
+# Arquivos com senhas
 .env
 .env.*
 !.env.example
