@@ -7,143 +7,79 @@
     <title>Autenticação - SALIINF</title>
     <link rel="stylesheet" href="ValidacaoCadastroStyle.css">
 </head>
-
 <body>
 
     <div class="container" id="container">
+
+        <div id="login" class="estado"></div>
+        <div id="cadastro" class="estado"></div>
+        <div id="verificacao" class="estado"></div>
 
         <div class="form-container cadastro-container">
 
             <div class="cadastro">
                 <h1>Crie sua Conta</h1>
 
-                <input
-                    type="text"
-                    placeholder="Nome completo"
-                    id="name"
-                >
+                <input type="text" placeholder="Nome completo" id="name">
+                <input type="email" placeholder="E-mail institucional" id="email">
+                <input type="password" placeholder="Senha" id="password">
+                <input type="password" placeholder="Confirmar senha" id="confirm-password">
 
-                <input
-                    type="email"
-                    placeholder="E-mail institucional"
-                    id="email"
-                >
-
-                <input
-                    type="password"
-                    placeholder="Senha"
-                    id="password"
-                >
-
-                <input
-                    type="password"
-                    placeholder="Confirmar senha"
-                    id="confirm-password"
-                >
-
-                <button type="button">Continuar</button>
+                <a href="#verificacao" class="btn-principal">Continuar</a>
+                <a href="#login" class="btn-voltar">Voltar</a>
             </div>
 
             <div class="verificacao">
-
                 <h1>Crie sua Conta</h1>
 
-                <p>
-                    Insira o código único que enviamos
-                    para seu e-mail
-                </p>
+                <p>Insira o código único que enviamos para seu e-mail</p>
 
                 <div class="codigo-container">
-
-                    <input type="text" maxlength="1"
-                           inputmode="numeric" aria-label="Dígito 1">
-
-                    <input type="text" maxlength="1"
-                           inputmode="numeric" aria-label="Dígito 2">
-
-                    <input type="text" maxlength="1"
-                           inputmode="numeric" aria-label="Dígito 3">
-
-                    <input type="text" maxlength="1"
-                           inputmode="numeric" aria-label="Dígito 4">
-
-                    <input type="text" maxlength="1"
-                           inputmode="numeric" aria-label="Dígito 5">
-
-                    <input type="text" maxlength="1"
-                           inputmode="numeric" aria-label="Dígito 6">
-
+                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 1">
+                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 2">
+                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 3">
+                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 4">
+                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 5">
+                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 6">
                 </div>
 
-                <button type="button" class="btn-continuar">
-                    Continuar
-                </button>
-
-                <button type="button" class="btn-reenviar">
-                    Reenviar E-mail
-                </button>
-
+                <button type="button" class="btn-continuar">Continuar</button>
+                <button type="button" class="btn-reenviar">Reenviar E-mail</button>
+                <a href="#cadastro" class="btn-voltar">Voltar</a>
             </div>
 
         </div>
 
         <div class="form-container login-container">
-
             <div class="login">
-
                 <h1>Login</h1>
 
-                <input
-                    type="text"
-                    placeholder="E-mail ou nome de usuário"
-                >
-
-                <input
-                    type="password"
-                    placeholder="Senha"
-                >
+                <input type="text" placeholder="E-mail ou nome de usuário">
+                <input type="password" placeholder="Senha">
 
                 <button type="button">Entrar</button>
-
             </div>
-
         </div>
 
         <div class="overlay-container">
-
             <div class="overlay">
 
                 <div class="overlay-panel overlay-left">
-
                     <h1>Bem-Vindo!</h1>
-
                     <span>Não possui conta?</span>
-
-                    <button id="to-register">
-                        Cadastre-se
-                    </button>
-
+                    <a href="#cadastro" class="btn-overlay">Cadastre-se</a>
                 </div>
 
                 <div class="overlay-panel overlay-right">
-
                     <h1>Bem-Vindo!</h1>
-
-                    <span>Já possui conta? Acesse</span>
-
-                    <button id="to-login">
-                        LOGIN
-                    </button>
-
+                    <span>Já possui conta?</span>
+                    <a href="#login" class="btn-overlay">Login</a>
                 </div>
 
             </div>
-
         </div>
 
     </div>
-
-    <script src="autenticacaoScript.js"></script>
 
 </body>
 </html>
