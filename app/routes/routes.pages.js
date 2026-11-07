@@ -6,4 +6,8 @@ router.get('/auth', async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/Validacao-cadastro.html'));
 });
 
+router.get('/dashboard', async(req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'views/Agenda-geral.html'));
+});
+
 module.exports = router;
