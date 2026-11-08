@@ -7,7 +7,7 @@ router.get('/auth', async(req, res) => {
 });
 
 router.get('/dashboard', async(req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'views/Agenda-geral.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'views/Usuario.html'));
 });
 
 module.exports = router;
