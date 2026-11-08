@@ -1,0 +1,42 @@
+.bloco-contas {
+    border: 1px solid black;
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 0px;
+}
+
+.bloco-usuario {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    width: 75%;
+    height: 100px;
+}
+
+.dados {
+    width: 50%;
+}
+
+.botoes {
+    width: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

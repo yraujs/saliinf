@@ -56,12 +56,38 @@ document.getElementById('btn-login').addEventListener('click', async() => {
     }
 });
 
+async function enviarCodigo() {
+    const nomeCompletoCadastro = document.getElementById('name').value;
+    const emailCadastro = document.getElementById('email').value;
+    
+    const resposta = await fetch('/api/enviarCodigoDeVerificacao', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeCompleto:nomeCompletoCadastro,
+                email: emailCadastro
+            })
+        });
+
+    const dados = await resposta.json();
+
+    if(dados.success){
+        console.log('código enviado!');
+    }else{
+        console.log(`erro ${dados.status} -->`, dados.message);
+    }
+}
+
 //CADASTRO
-document.getElementById('btn-cadastro').addEventListener('click', async() => {
+document.getElementById('btn-cadastro').addEventListener('click', async(e) => {
     const nomeCompletoCadastro = document.getElementById('name').value;
     const emailCadastro = document.getElementById('email').value;
     const senhaCadastro = document.getElementById('password').value;
     const confirmarSenhaCadastro = document.getElementById('confirm-password').value;
+
+    e.preventDefault();
 
     const usuario = {
         nomeCompleto:nomeCompletoCadastro,
@@ -71,6 +97,11 @@ document.getElementById('btn-cadastro').addEventListener('click', async() => {
     }
 
     let camposVazios = 0;
+
+    console.log('nome:', nomeCompletoCadastro);
+    console.log('email:', emailCadastro);
+    console.log('senha:', senhaCadastro);
+    console.log('confirmar senha:', confirmarSenhaCadastro);
 
     for(let atributo in usuario){
         if(!usuario[atributo]){
@@ -93,26 +124,155 @@ document.getElementById('btn-cadastro').addEventListener('click', async() => {
         return;
     }
 
-    const resposta = await fetch('/api/cadastro', {
+    const btnEnviar = document.getElementById("btn-cadastro");
+    const loading = document.getElementById('loading');
+
+    btnEnviar.classList.add('loading');
+    loading.classList.remove('hidden');
+
+    btnEnviar.disabled=true;
+
+    try{
+
+        const resposta = await fetch('/api/verificarDadosCadastro', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeCompleto:nomeCompletoCadastro,
+                email: emailCadastro,
+                senha: senhaCadastro,
+                confirmarSenha: confirmarSenhaCadastro
+            })
+        });
+
+        const dados = await resposta.json();
+
+        if(dados.success){
+            await enviarCodigo();
+        }else{
+            console.log(`erro ${dados.status} -->`, dados.message);
+        }
+
+    }catch(erro){
+        console.log(erro);
+    }finally{
+
+        loading.classList.add('hidden');
+        btnEnviar.classList.remove('loading');
+
+        btnEnviar.disabled=false;
+        window.location.href="#verificacao";
+    }
+ 
+});
+
+function trocarInput(idAtual, idProximo){
+    if(document.getElementById(idAtual).value >= 0){
+        document.getElementById(idProximo).focus();
+    }
+}
+
+
+let cod = ['cod1', 'cod2', 'cod3', 'cod4', 'cod5', 'cod6']
+
+function getCodigo(){
+    const valores = [];
+
+    for(let i in cod){
+        let valor = document.getElementById(cod[i]).value;
+        
+        valores.push(valor);
+    }
+
+    const codigo = valores.join("");
+    return codigo;
+}
+
+async function cadastrarUsuario() {
+    const nomeCompleto = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('password').value;
+  
+    try{
+
+        const resposta = await fetch('/api/cadastrarUsuario', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeCompleto:nomeCompleto,
+                email: email,
+                senha: senha
+            })
+        });
+
+        const dados = await resposta.json();
+
+        if(dados.success){
+            
+        }else{
+            console.log(`erro ${dados.status} -->`, dados.message);
+        }
+
+    }catch(erro){
+
+        console.log(erro);
+    }
+
+}
+
+document.getElementById('btn-verificar_codigo').addEventListener('click', async() => {
+    const codigoDeVerificacao = getCodigo();
+    const email = document.getElementById('email').value;
+
+    const resposta = await fetch('/api/verificarCodigo', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            nomeCompleto:nomeCompletoCadastro,
-            email: emailCadastro,
-            senha: senhaCadastro,
-            confirmarSenha: confirmarSenhaCadastro
+            codigo: codigoDeVerificacao,
+            email: email
         })
     });
 
     const dados = await resposta.json();
 
-    //se der tudo certo, pode ir pra outra pagina junto com o token
     if(dados.success){
-        console.log('cadastro realizado com sucesso!');
-    }else{
-        console.log(`erro ${dados.status} -->`, dados.message);
-    }
+        cadastrarUsuario();
 
+        console.log('cadastro realizado com sucesso! Sua conta será analisada e em pouco tempo verifique seu email para saber se pode acessar o sistema...');
+
+        let contador = 0;
+
+        const intervalo = setInterval(() => {
+            contador++;
+            console.log(contador);
+
+            if(contador === 5){
+                clearInterval(intervalo);
+                console.log('redirecionando...');
+                window.location.href="/autenticacao";
+            }
+        }, 1000)
+
+    }else{
+        console.log("deu pau");
+    }
 });
+
+//CÓDIGO DE VERIFICAÇÃO
+/*
+let cod = ['cod1', 'cod2', 'cod3', 'cod4', 'cod5', 'cod6']
+
+for(let codigo in cod){
+    let inputCodigo = document.querySelector(`#${cod[codigo]}`);
+    console.log(cod[codigo])
+    inputCodigo.addEventListener('input', ()=>{
+        inputCodigo.value = inputCodigo.value.replace(/\D/g, "")
+        console.log("teste")
+    });
+};*/
