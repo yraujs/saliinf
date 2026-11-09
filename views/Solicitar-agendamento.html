@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Agendamento</title>
+    <link rel="stylesheet" href="/css/Solicitar-agendamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#" class="menu">Meus Agendamentos</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-principal">
+            <h1>Solicitar Agendamento</h1>
+            <p class="subtitulo">Preencha os campos abaixo para solicitar um agendamento</p>
+
+            <form class="formulario" action="#" method="post">
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-regular fa-calendar"></i>
+                        <label for="dia">Dia</label>
+                    </div>
+
+                    <div class="conteudo-campo">
+                        <input type="date" id="dia" name="dia" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-regular fa-clock"></i>
+                        <label>Horário</label>
+                    </div>
+
+                    <div class="horarios">
+                        <div class="grupo-horario">
+                            <label for="horario-inicio">Horário de início</label>
+                            <select id="horario-inicio" name="horario-inicio" required>
+                                <option value="" selected disabled>Selecione o horário</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-horario">
+                            <label for="horario-fim">Horário de término</label>
+                            <select id="horario-fim" name="horario-fim" required>
+                                <option value="" selected disabled>Selecione o horário</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-solid fa-desktop"></i>
+                        <label for="laboratorio">Laboratório</label>
+                    </div>
+
+                    <div class="conteudo-campo">
+                        <select id="laboratorio" name="laboratorio" required>
+                            <option value="" selected disabled>Selecione o laboratório</option>
+                            <option value="1">Laboratório 1</option>
+                            <option value="2">Laboratório 2</option>
+                            <option value="3">Laboratório 3</option>
+                            <option value="4">Laboratório 4</option>
+                            <option value="5">Laboratório 5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <label for="atividade">Atividade</label>
+                    </div>
+
+                    <div class="conteudo-campo">
+                        <textarea id="atividade" name="atividade" placeholder="Descreva a atividade a ser realizada" required></textarea>
+                    </div>
+                </div>
+
+                <div class="botoes">
+                    <a href="#" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar
+                    </a>
+
+                    <div class="botoes-direita">
+                        <a href="#" class="btn-cancelar">Cancelar</a>
+                        <button type="submit" class="btn-enviar">
+                            Enviar Solicitação
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
