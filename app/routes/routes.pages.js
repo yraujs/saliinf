@@ -15,7 +15,7 @@ router.get('/geral', async(req, res) => {
 });
 
 router.get('/agendamento', async(req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'views/Agendamento.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'views/Solicitar-agendamento.html'));
 });
 
 router.get('/usuarios', async(req, res) => {
