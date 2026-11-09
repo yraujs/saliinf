@@ -7,6 +7,11 @@
     <title>Solicitações de cadastro</title>
     <link rel="stylesheet" href="/css/Admin-usuarios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script defer>
+        window.dadosPagina = {
+            usuarios: {{{json usuarios}}},
+        }
+    </script>
 </head>
 <body class="pagina-pendentes">
     <header>
@@ -18,8 +23,8 @@
         <nav>
             <ul>
                 <li><a href="#">Agenda</a></li>
-                <li><a href="#">Solicitações</a></li>
-                <li><a href="Usuarios.html" class="menu">Usuários</a></li>
+                <li><a href="/admin/dashboard">Solicitações</a></li>
+                <li><a class="menu">Usuários</a></li>
                 <li><a href="#">Laboratórios</a></li>
                 <li><a href="#">Calendário Letivo</a></li>
             </ul>
@@ -40,8 +45,8 @@
 
             <div class="seletor">
                 <div class="indicador"></div>
-                <a href="Usuarios.html" class="aba">Usuários</a>
-                <a href="CadastrosPendentes.html" class="aba ativa">Solicitações de cadastro</a>
+                <a href="/admin/usuarios" class="aba">Usuários</a>
+                <a class="aba ativa">Solicitações de cadastro</a>
             </div>
 
             <div class="pesquisa">
@@ -55,136 +60,17 @@
                         <tr>
                             <th>Nome</th>
                             <th>E-mail</th>
-                            <th>Departamento</th>
                             <th>Data da solicitação</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="nome-usuario">
-                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
-                                    Danllyo
-                                </div>
-                            </td>
-                            <td>dan.araujo@ifam.edu.br</td>
-                            <td><span class="departamento">DAIC</span></td>
-                            <td>09/11/2026 às 14:27</td>
-                            <td>
-                                <div class="acoes">
-                                    <button class="btn-aprovar">
-                                        <i class="fa-solid fa-check"></i>
-                                        Aprovar
-                                    </button>
-                                    <button class="btn-recusar">
-                                        <i class="fa-solid fa-xmark"></i>
-                                        Recusar
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="nome-usuario">
-                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
-                                    Shaulin Matador de Porco
-                                </div>
-                            </td>
-                            <td>shaulin.matador@ifam.edu.br</td>
-                            <td><span class="departamento">DAIC</span></td>
-                            <td>09/11/2026 às 11:03</td>
-                            <td>
-                                <div class="acoes">
-                                    <button class="btn-aprovar">
-                                        <i class="fa-solid fa-check"></i>
-                                        Aprovar
-                                    </button>
-                                    <button class="btn-recusar">
-                                        <i class="fa-solid fa-xmark"></i>
-                                        Recusar
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="nome-usuario">
-                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
-                                    sim Ribeiro
-                                </div>
-                            </td>
-                            <td>sim.ribeiro@ifam.edu.br</td>
-                            <td><span class="departamento">DAEF</span></td>
-                            <td>08/11/2026 às 17:48</td>
-                            <td>
-                                <div class="acoes">
-                                    <button class="btn-aprovar">
-                                        <i class="fa-solid fa-check"></i>
-                                        Aprovar
-                                    </button>
-                                    <button class="btn-recusar">
-                                        <i class="fa-solid fa-xmark"></i>
-                                        Recusar
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="nome-usuario">
-                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
-                                    Freeza
-                                </div>
-                            </td>
-                            <td>freeza.goku@ifam.edu.br</td>
-                            <td><span class="departamento">Dragon ball</span></td>
-                            <td>08/11/2026 às 15:20</td>
-                            <td>
-                                <div class="acoes">
-                                    <button class="btn-aprovar">
-                                        <i class="fa-solid fa-check"></i>
-                                        Aprovar
-                                    </button>
-                                    <button class="btn-recusar">
-                                        <i class="fa-solid fa-xmark"></i>
-                                        Recusar
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="nome-usuario">
-                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
-                                    Tá na hora do cocoricóóóó
-                                </div>
-                            </td>
-                            <td>cocoricó.almeida@ifam.edu.br</td>
-                            <td><span class="departamento">Vila Césamo</span></td>
-                            <td>07/11/2026 às 10:36</td>
-                            <td>
-                                <div class="acoes">
-                                    <button class="btn-aprovar">
-                                        <i class="fa-solid fa-check"></i>
-                                        Aprovar
-                                    </button>
-                                    <button class="btn-recusar">
-                                        <i class="fa-solid fa-xmark"></i>
-                                        Recusar
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="bloco-contas"></tbody>
                 </table>
             </div>
         </section>
     </main>
+
+    <script src="/js-admin/cadastrosPendentes.js" defer></script>
 </body>
 </html>

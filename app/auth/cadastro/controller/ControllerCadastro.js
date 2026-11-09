@@ -60,10 +60,12 @@ class ControllerCadastro{
 
             const resposta = await daoCadastrar.daoCadastrar(usuario);
 
-            return {
-                message: "cadastro realizado com sucesso",
-                success: resposta,
-                status: 201
+            if(resposta){
+                return {
+                    message: "cadastro realizado com sucesso",
+                    success: resposta,
+                    status: 201
+                }
             }
 
         }catch(erro){

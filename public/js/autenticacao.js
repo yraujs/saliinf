@@ -196,7 +196,24 @@ async function cadastrarUsuario() {
     const nomeCompleto = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const senha = document.getElementById('password').value;
-  
+
+    const hoje = new Date();
+    const datas = [hoje.getDate(), hoje.getMonth()+1, hoje.getFullYear()];
+    const dataAtual = datas.join('/');
+
+    let minutos = hoje.getMinutes();
+    if(minutos < 10){
+        minutos = "0"+minutos;
+    }
+
+    const horarios = [hoje.getHours(), minutos];
+    const horarioAtual = horarios.join(':');
+
+    const dataSolicitacao = {
+        data: dataAtual,
+        horario: horarioAtual
+    };
+    
     try{
 
         const resposta = await fetch('/api/cadastrarUsuario', {
@@ -207,7 +224,8 @@ async function cadastrarUsuario() {
             body: JSON.stringify({
                 nomeCompleto:nomeCompleto,
                 email: email,
-                senha: senha
+                senha: senha,
+                dataSolicitacao: dataSolicitacao
             })
         });
 
@@ -265,16 +283,3 @@ document.getElementById('btn-verificar_codigo').addEventListener('click', async(
         console.log("deu pau");
     }
 });
-
-//CÓDIGO DE VERIFICAÇÃO
-/*
-let cod = ['cod1', 'cod2', 'cod3', 'cod4', 'cod5', 'cod6']
-
-for(let codigo in cod){
-    let inputCodigo = document.querySelector(`#${cod[codigo]}`);
-    console.log(cod[codigo])
-    inputCodigo.addEventListener('input', ()=>{
-        inputCodigo.value = inputCodigo.value.replace(/\D/g, "")
-        console.log("teste")
-    });
-};*/

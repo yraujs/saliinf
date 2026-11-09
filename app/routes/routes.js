@@ -9,7 +9,7 @@ router.post('/api/verificarDadosCadastro', async(req, res) => {
     //Criando um objeto com os dados recebidos
     const { nomeCompleto, email, senha, confirmarSenha } = req.body;
     const UsuarioCadastro = require('../auth/cadastro/model/UsuarioCadastro');
-    const usuario = new UsuarioCadastro('123', nomeCompleto, email, senha, confirmarSenha, "DAIC", true);
+    const usuario = new UsuarioCadastro('123', nomeCompleto, email, senha, confirmarSenha, 'now', "DAIC", true);
 
     const ControllerCadastro = require('../auth/cadastro/controller/ControllerCadastro');
     const controllerCadastro = new ControllerCadastro();
@@ -46,11 +46,11 @@ router.post('/api/verificarCodigo', async(req, res) => {
 router.post('/api/cadastrarUsuario', async(req, res) => {
     console.log('cadastrando usuário...');
 
-    const { nomeCompleto, email, senha } = req.body;
+    const { nomeCompleto, email, senha, dataSolicitacao } = req.body;
     const UsuarioCadastro = require('../auth/cadastro/model/UsuarioCadastro');
     const gerarIdUsuario = require('../auth/services/gerarIdUsuario');
 
-    const usuario = new UsuarioCadastro(gerarIdUsuario(), nomeCompleto, email, senha, null, "DAIC", false);
+    const usuario = new UsuarioCadastro(gerarIdUsuario(), nomeCompleto, email, senha, null, dataSolicitacao, "DAIC", false);
     delete usuario.confirmarSenha;
 
     const ControllerCadastro = require('../auth/cadastro/controller/ControllerCadastro');

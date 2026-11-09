@@ -21,6 +21,17 @@ const CadastroSchema = new moongose.Schema({
         required: true,
     },
 
+    dataSolicitacao: {
+        data: {
+            type: String,
+            required: true
+        },
+        horario: {
+            type: String,
+            required: true,
+        }
+    },
+
     departamento: {
         type: String,
         require: true
