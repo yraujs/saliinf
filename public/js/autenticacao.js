@@ -53,6 +53,8 @@ document.getElementById('btn-login').addEventListener('click', async() => {
 
     if(dados.success){
         console.log('deu certo');
+    }else{
+        console.log('raquel me deve 1000 reaix  ');
     }
 });
 
@@ -151,6 +153,7 @@ document.getElementById('btn-cadastro').addEventListener('click', async(e) => {
 
         if(dados.success){
             await enviarCodigo();
+            window.location.href="#verificacao";
         }else{
             console.log(`erro ${dados.status} -->`, dados.message);
         }
@@ -163,7 +166,6 @@ document.getElementById('btn-cadastro').addEventListener('click', async(e) => {
         btnEnviar.classList.remove('loading');
 
         btnEnviar.disabled=false;
-        window.location.href="#verificacao";
     }
  
 });

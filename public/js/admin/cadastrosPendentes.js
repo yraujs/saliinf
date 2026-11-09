@@ -16,56 +16,30 @@ for(let i = 0; i < usuarios.length; i++){
     `);
 }   
 
-async function aceitarUsuario(idUsuario) {
-    const resposta = await fetch('/api/aceitarCadastroUsuario', {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idUsuario: idUsuario
-        })
-    });
-
-    const dados = await resposta.json();
-
-    if(dados.success){
-        document.getElementById(`bloco-usuario-${usuarios[i].idUsuario}`).remove();
-    }
-}
-
-async function recusarUsuario(idUsuario) {
-    const resposta = await fetch('/api/recusarCadastroUsuario', {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idUsuario: idUsuario
-        })
-    });
-    
-    const dados = await resposta.json();
-
-    if(dados.success){
-        document.getElementById(`bloco-usuario-${usuarios[i].idUsuario}`).remove();
-    }
-}
-
 const botoes = document.querySelectorAll('button');
 botoes.forEach(botao => {
     const idBotao = botao.id;
     const tipoBotao = idBotao.slice(0, 7);
     const idUsuario = idBotao.slice(7, idBotao.length);
 
-    if(tipoBotao === "aceitar"){
-        document.getElementById(idBotao).addEventListener('click', async() => {
-            await aceitarUsuario(idUsuario);
+    document.getElementById(botao.id).addEventListener('click', async() => {
+        const resposta = await fetch('/admin/api/analisarCadastro', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                metodo: tipoBotao,
+                idUsuario: idUsuario
+            })
         });
-    }else if(tipoBotao === "recusar"){
-        document.getElementById(idBotao).addEventListener('click', async() => {
-            await aceitarUsuario(idUsuario);
-        });
-    }
+        const dados = await resposta.json();
+
+        console.log(dados);
+
+        if(dados.success){
+            document.getElementById(`bloco-usuario-${idUsuario}`).remove();
+        }
+    });
 
 })

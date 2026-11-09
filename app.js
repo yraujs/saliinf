@@ -40,6 +40,10 @@ app.use(routes_assets_admin);
 const routes_app = require('./app/routes/routes');
 app.use(routes_app);
 
+//Rotas de Admin para API REST
+const routes_app_admin = require('./app/routes/admin/routes.admin');
+app.use(routes_app_admin);
+
 app.listen(3000, () => {
     console.log('servidor ligado');
 });
