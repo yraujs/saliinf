@@ -18,6 +18,10 @@ router.get('/agendamento', async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/Agendamento.html'));
 });
 
+router.get('/usuarios', async(req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'views/Usuario.html'));
+});
+
 router.get('/sobre', async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/Sobre.html'));
 });
