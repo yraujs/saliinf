@@ -7,7 +7,7 @@ router.get('/auth', async(req, res) => {
 });
 
 router.get('/dashboard', async(req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'views/Solicitar-agendamento.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'views/Admin-usuarios.html'));
 });
 
 module.exports = router;

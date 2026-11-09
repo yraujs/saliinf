@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitações de cadastro</title>
+    <link rel="stylesheet" href="/css/Admin-usuarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="pagina-pendentes">
+    <header>
+        <div class="header-esquerda">
+            <img src="/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#">Solicitações</a></li>
+                <li><a href="Usuarios.html" class="menu">Usuários</a></li>
+                <li><a href="#">Laboratórios</a></li>
+                <li><a href="#">Calendário Letivo</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+            <button>Administrador</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="container-principal">
+            <h1>Usuários</h1>
+
+            <div class="seletor">
+                <div class="indicador"></div>
+                <a href="Usuarios.html" class="aba">Usuários</a>
+                <a href="CadastrosPendentes.html" class="aba ativa">Solicitações de cadastro</a>
+            </div>
+
+            <div class="pesquisa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Buscar por nome ou e-mail">
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Departamento</th>
+                            <th>Data da solicitação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Danllyo
+                                </div>
+                            </td>
+                            <td>dan.araujo@ifam.edu.br</td>
+                            <td><span class="departamento">DAIC</span></td>
+                            <td>09/11/2026 às 14:27</td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-aprovar">
+                                        <i class="fa-solid fa-check"></i>
+                                        Aprovar
+                                    </button>
+                                    <button class="btn-recusar">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        Recusar
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Shaulin Matador de Porco
+                                </div>
+                            </td>
+                            <td>shaulin.matador@ifam.edu.br</td>
+                            <td><span class="departamento">DAIC</span></td>
+                            <td>09/11/2026 às 11:03</td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-aprovar">
+                                        <i class="fa-solid fa-check"></i>
+                                        Aprovar
+                                    </button>
+                                    <button class="btn-recusar">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        Recusar
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    sim Ribeiro
+                                </div>
+                            </td>
+                            <td>sim.ribeiro@ifam.edu.br</td>
+                            <td><span class="departamento">DAEF</span></td>
+                            <td>08/11/2026 às 17:48</td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-aprovar">
+                                        <i class="fa-solid fa-check"></i>
+                                        Aprovar
+                                    </button>
+                                    <button class="btn-recusar">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        Recusar
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Freeza
+                                </div>
+                            </td>
+                            <td>freeza.goku@ifam.edu.br</td>
+                            <td><span class="departamento">Dragon ball</span></td>
+                            <td>08/11/2026 às 15:20</td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-aprovar">
+                                        <i class="fa-solid fa-check"></i>
+                                        Aprovar
+                                    </button>
+                                    <button class="btn-recusar">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        Recusar
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Tá na hora do cocoricóóóó
+                                </div>
+                            </td>
+                            <td>cocoricó.almeida@ifam.edu.br</td>
+                            <td><span class="departamento">Vila Césamo</span></td>
+                            <td>07/11/2026 às 10:36</td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-aprovar">
+                                        <i class="fa-solid fa-check"></i>
+                                        Aprovar
+                                    </button>
+                                    <button class="btn-recusar">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        Recusar
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

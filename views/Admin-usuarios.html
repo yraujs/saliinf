@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link rel="stylesheet" href="/css/Admin-usuarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#">Solicitações</a></li>
+                <li><a href="Usuarios.html" class="menu">Usuários</a></li>
+                <li><a href="#">Laboratórios</a></li>
+                <li><a href="#">Calendário Letivo</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+            <button>Administrador</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="container-principal">
+            <h1>Usuários</h1>
+
+            <div class="seletor">
+                <div class="indicador"></div>
+                <a href="Usuarios.html" class="aba ativa">Usuários</a>
+                <a href="CadastrosPendentes.html" class="aba">Solicitações de cadastro</a>
+            </div>
+
+            <div class="pesquisa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Buscar por nome ou e-mail">
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Departamento</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Marcia da Costa Pimenta Martins
+                                </div>
+                            </td>
+                            <td>marcia.costa@ifam.edu.br</td>
+                            <td><span class="departamento">DAIC</span></td>
+                            <td><span class="status ativa">Ativa</span></td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-excluir">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                        Excluir usuário
+                                    </button>
+                                    <button class="btn-bloquear">
+                                        <i class="fa-solid fa-lock"></i>
+                                        Bloquear conta
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Josiane Rodrigues Sandes
+                                </div>
+                            </td>
+                            <td>josiane.sandes@ifam.edu.br</td>
+                            <td><span class="departamento">DAIC</span></td>
+                            <td><span class="status ativa">Ativa</span></td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-excluir">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                        Excluir usuário
+                                    </button>
+                                    <button class="btn-bloquear">
+                                        <i class="fa-solid fa-lock"></i>
+                                        Bloquear conta
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    Jucibs
+                                </div>
+                            </td>
+                            <td>jucibs.poo@ifam.edu.br</td>
+                            <td><span class="departamento">DAIC</span></td>
+                            <td><span class="status ativa">Ativa</span></td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-excluir">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                        Excluir usuário
+                                    </button>
+                                    <button class="btn-bloquear">
+                                        <i class="fa-solid fa-lock"></i>
+                                        Bloquear conta
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                    user
+                                </div>
+                            </td>
+                            <td>@ifam.edu.br</td>
+                            <td><span class="departamento"></span></td>
+                            <td><span class="status bloqueada">Bloqueada</span></td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-excluir">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                        Excluir usuário
+                                    </button>
+                                    <button class="btn-desbloquear">
+                                        <i class="fa-solid fa-lock-open"></i>
+                                        Desbloquear
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="nome-usuario">
+                                    <span class="avatar"><i class="fa-regular fa-user"></i></span>
+                                      
+                                </div>
+                            </td>
+                            <td>@ifam.edu.br</td>
+                            <td><span class="departamento"></span></td>
+                            <td><span class="status ativa">Ativa</span></td>
+                            <td>
+                                <div class="acoes">
+                                    <button class="btn-excluir">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                        Excluir usuário
+                                    </button>
+                                    <button class="btn-bloquear">
+                                        <i class="fa-solid fa-lock"></i>
+                                        Bloquear conta
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
