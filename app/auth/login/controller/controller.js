@@ -1,4 +1,6 @@
 const emailValido = require('../../../utils/email/emailValido');
+const daoLogin = require('../db/daoLogin');
+const bcrypt = require('bcrypt');
 
 async function controllerLogin(usuario) {
     let erros = 0;
@@ -19,11 +21,23 @@ async function controllerLogin(usuario) {
         }
     }
 
-    return {
-        message: "Tudo certo!",
-        status: 201,
-        success: true
+    const resposta = await daoLogin(usuario);
+
+    if(resposta?.email === usuario.email && await bcrypt.compare(usuario.senha, resposta?.senha)){
+        return {
+            message: "Tudo certo!",
+            status: 201,
+            success: true
+        }        
+    }else{
+        console.log('deu errado');
+
+        return {
+            success: false,
+            message: "Email ou senha incorretos!"
+        }
     }
+
 }
 
 module.exports = controllerLogin;

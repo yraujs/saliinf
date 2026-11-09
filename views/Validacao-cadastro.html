@@ -24,7 +24,11 @@
                 <input type="password" placeholder="Senha" id="password">
                 <input type="password" placeholder="Confirmar senha" id="confirm-password">
 
-                <a href="#verificacao" id="btn-cadastro" class="btn-principal">Continuar</a>
+                <a id="btn-cadastro" class="btn-principal">Continuar
+                    <div id="loading" class="hidden">
+                        <div class="spinner"></div>    
+                    </div> 
+                </a>
                 <a href="#login" class="btn-voltar">Voltar</a>
             </div>
 
@@ -33,15 +37,15 @@
                 <p>Insira o código único que enviamos para seu e-mail</p>
 
                 <div class="codigo-container">
-                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 1">
-                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 2">
-                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 3">
-                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 4">
-                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 5">
-                    <input type="text" maxlength="1" inputmode="numeric" aria-label="Dígito 6">
+                    <input type="text" id="cod1" maxlength="1" inputmode="numeric" aria-label="Dígito 1" oninput="trocarInput('cod1', 'cod2')">
+                    <input type="text" id="cod2" maxlength="1" inputmode="numeric" aria-label="Dígito 2" oninput="trocarInput('cod2', 'cod3')">
+                    <input type="text" id="cod3" maxlength="1" inputmode="numeric" aria-label="Dígito 3" oninput="trocarInput('cod3', 'cod4')">
+                    <input type="text" id="cod4" maxlength="1" inputmode="numeric" aria-label="Dígito 4" oninput="trocarInput('cod4', 'cod5')">
+                    <input type="text" id="cod5" maxlength="1" inputmode="numeric" aria-label="Dígito 5" oninput="trocarInput('cod5', 'cod6')">
+                    <input type="text" id="cod6" maxlength="1" inputmode="numeric" aria-label="Dígito 6">
                 </div>
 
-                <button type="button" class="btn-continuar">Continuar</button>
+                <button type="button" id="btn-verificar_codigo" class="btn-continuar">Continuar</button>
                 <button type="button" class="btn-reenviar">Reenviar E-mail</button>
                 <a href="#cadastro" class="btn-voltar">Voltar</a>
             </div>
