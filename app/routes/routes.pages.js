@@ -36,4 +36,29 @@ router.get('/admin', async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/admin/Admin-usuarios.html'));
 });
 
+function temToken(req, res, next){
+    const token = req.cookies.token;
+
+    if(!token){
+        return next();
+    }
+
+    try{
+
+        jwt.verify(token, process.env.JWT_SECRET);
+
+        return res.redirect('/profile');
+
+    }catch(erro){
+        console.log(erro);
+
+        res.clearCookie('token', {
+            httpOnly: true,
+            path: '/'
+        });
+
+        next();
+    }
+}
+
 module.exports = router;
