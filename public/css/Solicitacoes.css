@@ -16,10 +16,55 @@ header {
     background-color: #103B60;
     color: #fff;
     padding: 5px 50px;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+}
+
+nav {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+header p {
+    text-align: left;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-direita button {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .header-esquerda {
@@ -31,7 +76,6 @@ header {
 .header-esquerda p {
     text-align: left;
     line-height: 1.5;
-    font-size: 14px;
 }
 
 .header-esquerda span {
@@ -39,50 +83,8 @@ header {
     font-size: 20px;
 }
 
-nav {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-nav ul {
-    display: flex;
-    gap: 10px;
-    list-style: none;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 16px;
-    margin: 0 5px;
-    white-space: nowrap;
-}
-
 .menu {
     border-bottom: 3px solid #76C9F6;
-}
-
-.header-direita {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.header-direita p {
-    text-align: left;
-    font-size: 14px;
-}
-
-.header-direita button {
-    padding: 10px 15px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
 }
 
 main {
@@ -296,7 +298,7 @@ main {
     text-decoration: underline;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1400px) {
     header {
         flex-wrap: wrap;
         gap: 15px;
@@ -305,8 +307,22 @@ main {
     nav {
         position: static;
         transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
     }
 
+    nav a {
+        font-size: 17px;
+        margin: 0 5px;
+    }
+
+    .header-direita {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 1100px) {
     .cartao-solicitacao {
         grid-template-columns: 1fr 1fr;
         gap: 15px;
@@ -321,20 +337,33 @@ main {
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
     header {
-        padding: 15px 20px;
+        padding: 10px 20px;
+    }
+
+    .header-esquerda img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .header-direita p {
+        display: none;
     }
 
     nav ul {
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
     }
 
     nav a {
         font-size: 14px;
-        margin: 0;
+        padding: 6px;
     }
+}
 
+@media (max-width: 650px) {
     .titulo-pagina {
         gap: 15px;
     }
