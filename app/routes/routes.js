@@ -75,4 +75,18 @@ router.post('/api/login', async(req, res) => {
     res.json(resposta);
 });
 
+router.post('/api/solicitarAgendamento', async(req, res) => {
+    console.log('solicitando agendamento...');
+
+    const { diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade} = req.body;
+    const gerarIdAgendamento = require('../controllers/solicitar-agendamento/service/gerarIdAgendamento');
+    const Agendamento = require('../controllers/solicitar-agendamento/model/Agendamento');
+    const agendamento = new Agendamento(gerarIdAgendamento(), diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade, "pendente");
+
+    const controllerSolicitarAgendamento = require('../controllers/solicitar-agendamento/controller/controllerSolicitarAgendamento');
+    const resposta = await controllerSolicitarAgendamento(agendamento);
+
+    res.json(resposta);
+});
+
 module.exports = router;
