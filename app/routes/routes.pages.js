@@ -30,4 +30,8 @@ router.get('/ajuda', async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/Ajuda.html'));
 });
 
+router.get('/admin', async(req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'views/admin/Admin-usuarios.html'));
+});
+
 module.exports = router;
