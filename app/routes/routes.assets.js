@@ -24,5 +24,11 @@ router.get('/js/:file', (req, res) => {
 });
 
 
+//Utils
+router.get('/js.utils/:file', (req, res) => {
+    const {file} = req.params;
+    res.sendFile(path.join(__dirname, '..', '..', 'public', 'js', 'utils', file));
+});
+
 module.exports = router;
 

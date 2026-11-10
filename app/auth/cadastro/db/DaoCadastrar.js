@@ -49,7 +49,7 @@ class DaoCadastrar{
         const usuarioResgatado = await Cadastro.findOne({idUsuario: idUsuario}).lean();
         console.log('usuario resgatado:', usuarioResgatado);
 
-        const usuario = new UsuarioCadastro(usuarioResgatado.idUsuario, usuarioResgatado.nomeCompleto, usuarioResgatado.email, usuarioResgatado.senha, null, usuarioResgatado.departamento, usuarioResgatado.admin);
+        const usuario = new UsuarioCadastro(usuarioResgatado.idUsuario, usuarioResgatado.nomeCompleto, usuarioResgatado.email, usuarioResgatado.senha, null, null, usuarioResgatado.departamento, usuarioResgatado.admin);
         delete usuario.confirmarSenha;
 
         const criarUsuario = await Usuario.create(usuario);

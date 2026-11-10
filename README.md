@@ -12,5 +12,7 @@ npm install validator
 npm install nodemailer
 npm install bcrypt
 npm install express-handlebars
+npm install cookie-parser 
+npm install jsonwebtoken
 
 digitar para rodar servidor --> node app

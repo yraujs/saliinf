@@ -53,6 +53,8 @@ document.getElementById('btn-login').addEventListener('click', async() => {
 
     if(dados.success){
         console.log('deu certo');
+        localStorage.setItem("token", dados.token);
+        window.location.href="/agenda/geral";
     }else{
         console.log('raquel me deve 1000 reaix');
     }

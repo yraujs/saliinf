@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const autenticar = require('../auth/middlewares/autenticar');
 
 router.use(express.json());
 
@@ -70,7 +71,7 @@ router.post('/api/login', async(req, res) => {
     const usuario = new UsuarioLogin(email, senha);
 
     const controllerLogin = require('../auth/login/controller/controller');
-    const resposta = await controllerLogin(usuario);
+    const resposta = await controllerLogin(usuario, res);
 
     res.json(resposta);
 });
@@ -87,6 +88,17 @@ router.post('/api/solicitarAgendamento', async(req, res) => {
     const resposta = await controllerSolicitarAgendamento(agendamento);
 
     res.json(resposta);
+});
+
+router.post('/logout', autenticar, async(req, res) => {
+    console.log('chegando no logout');
+
+    res.clearCookie("token");
+    console.log('saindo do logout');
+
+    res.json({
+        mensagem: "Logout feito com sucesso"
+    })
 });
 
 module.exports = router;

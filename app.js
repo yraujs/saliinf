@@ -5,6 +5,7 @@ require('dotenv').config();
 const conectarBanco = require('./app/repositories/database/database');
 const { engine } = require('express-handlebars');
 const helpers = require('./helpers/handlebars.helpers');
+const cookieParser = require('cookie-parser');
 
 app.engine('handlebars', engine());
 
@@ -19,6 +20,7 @@ app.engine('handlebars', engine({
 app.use(express.static(path.join(__dirname, 'public')));
 
 conectarBanco();
+app.use(cookieParser());
 
 //Rotas das páginas
 const routes_pages = require('./app/routes/routes.pages');
