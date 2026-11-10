@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0A365D;
+}
+
+.fundo-escudo {
+    background-image: url("../img/shield-exclamation.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #0A365D;
+    width: 300px;
+    height: 400px;
+}
+
+h1{
+    color: #fff;
+    font-size: 110px;
+    margin-bottom: 20px;
+}
+
+h2{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+p{
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #0A365D;
+    color: #fff;
+    text-decoration: wavy;
+    border-radius: 5px;
+    border: #fff 3px solid;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #fff;
+    color: #0A365D;
+}
