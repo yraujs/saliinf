@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticação - SALIINF</title>
+    <link rel="stylesheet" href="../public/css/Validacao-cadastro.css">
+</head>
+<body>
+
+    <div class="container" id="container">
+
+        <div id="login" class="estado"></div>
+        <div id="cadastro" class="estado"></div>
+        <div id="verificacao" class="estado"></div>
+
+        <div class="form-container cadastro-container">
+
+            <div class="cadastro">
+                <h1>Crie sua Conta</h1>
+
+                <input type="text" placeholder="Nome completo" id="name">
+                <input type="email" placeholder="E-mail institucional" id="email">
+                <input type="password" placeholder="Senha" id="password">
+                <input type="password" placeholder="Confirmar senha" id="confirm-password">
+
+                <a id="btn-cadastro" class="btn-principal">Continuar
+                    <div id="loading" class="hidden">
+                        <div class="spinner"></div>    
+                    </div> 
+                </a>
+                <a href="#login" class="btn-voltar">Voltar</a>
+            </div>
+
+            <div class="verificacao">
+                <h1>Crie sua Conta</h1>
+                <p>Insira o código único que enviamos para seu e-mail</p>
+
+                <div class="codigo-container">
+                    <input type="text" id="cod1" maxlength="1" inputmode="numeric" aria-label="Dígito 1" oninput="trocarInput('cod1', 'cod2')">
+                    <input type="text" id="cod2" maxlength="1" inputmode="numeric" aria-label="Dígito 2" oninput="trocarInput('cod2', 'cod3')">
+                    <input type="text" id="cod3" maxlength="1" inputmode="numeric" aria-label="Dígito 3" oninput="trocarInput('cod3', 'cod4')">
+                    <input type="text" id="cod4" maxlength="1" inputmode="numeric" aria-label="Dígito 4" oninput="trocarInput('cod4', 'cod5')">
+                    <input type="text" id="cod5" maxlength="1" inputmode="numeric" aria-label="Dígito 5" oninput="trocarInput('cod5', 'cod6')">
+                    <input type="text" id="cod6" maxlength="1" inputmode="numeric" aria-label="Dígito 6">
+                </div>
+
+                <button type="button" id="btn-verificar_codigo" class="btn-continuar">Continuar</button>
+                <button type="button" class="btn-reenviar">Reenviar E-mail</button>
+                <a href="#cadastro" class="btn-voltar">Voltar</a>
+            </div>
+
+        </div>
+
+        <div class="form-container login-container">
+            <div class="login">
+                <h1>Login</h1>
+
+                <input type="text" placeholder="E-mail ou nome de usuário" id="email-login">
+                <input type="password" placeholder="Senha" id="password-login">
+
+                <button type="button" id="btn-login">Entrar</button>
+            </div>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+
+                <div class="overlay-panel overlay-left">
+                    <h1>Bem-Vindo!</h1>
+                    <span>Não possui conta?</span>
+                    <a href="#cadastro" id="to-register" class="btn-overlay">Cadastre-se</a>
+                </div>
+
+                <div class="overlay-panel overlay-right">
+                    <h1>Bem-Vindo!</h1>
+                    <span>Já possui conta?</span>
+                    <a href="#login" id="to-login" class="btn-overlay">Login</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/autenticacao.js"></script>
+
+</body>
+</html>

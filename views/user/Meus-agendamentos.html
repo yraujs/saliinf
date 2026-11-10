@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos</title>
+    <link rel="stylesheet" href="../public/css/Meus-agendamentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="../public/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../views/AgendaGeral.html">Agenda</a></li>
+                <li><a href="Meus-agendamentos.html" class="menu">Meus Agendamentos</a></li>
+                <li><a href="../views/Sobre.html">Sobre</a></li>
+                <li><a href="../views/Ajuda.html">Ajuda</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="titulo-pagina">
+            <h1>Meus Agendamentos</h1>
+
+            <a href="SolicitarAgendamento.html" class="btn-solicitar">
+                <i class="fa-solid fa-plus"></i>
+                Solicitar Agendamento
+            </a>
+        </div>
+
+        <div class="painel-agendamentos">
+            <section class="grupo-agendamentos">
+                <div class="titulo-grupo">
+                    <i class="fa-regular fa-calendar"></i>
+                    <h2>Meus Agendamentos</h2>
+                </div>
+
+                <div class="lista-agendamentos">
+                    <article class="cartao-agendamento">
+                        <div class="laboratorio">
+                            <span class="icone-laboratorio">
+                                <i class="fa-solid fa-desktop"></i>
+                            </span>
+                            <h3>Lab. 4</h3>
+                        </div>
+
+                        <div class="informacoes">
+                            <div class="info-linha">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>19/10/2026</span>
+                            </div>
+                            <div class="info-linha">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>13:00 - 14:00</span>
+                            </div>
+                        </div>
+
+                        <div class="situacao">
+                            <span class="status aprovado">
+                                <i class="fa-solid fa-check"></i>
+                                Aprovado
+                            </span>
+                        </div>
+
+                        <a href="#" class="btn-detalhes">
+                            Ver Detalhes
+                            <i class="fa-solid fa-angles-right"></i>
+                        </a>
+                    </article>
+
+                    <article class="cartao-agendamento">
+                        <div class="laboratorio">
+                            <span class="icone-laboratorio">
+                                <i class="fa-solid fa-desktop"></i>
+                            </span>
+                            <h3>Lab. 4</h3>
+                        </div>
+
+                        <div class="informacoes">
+                            <div class="info-linha">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>19/10/2026</span>
+                            </div>
+                            <div class="info-linha">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>13:00 - 14:00</span>
+                            </div>
+                        </div>
+
+                        <div class="situacao">
+                            <span class="status aprovado">
+                                <i class="fa-solid fa-check"></i>
+                                Aprovado
+                            </span>
+                        </div>
+
+                        <a href="#" class="btn-detalhes">
+                            Ver Detalhes
+                            <i class="fa-solid fa-angles-right"></i>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="grupo-agendamentos historico">
+                <div class="titulo-grupo">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <h2>Histórico</h2>
+                </div>
+
+                <div class="lista-agendamentos">
+                    <article class="cartao-agendamento">
+                        <div class="laboratorio">
+                            <span class="icone-laboratorio">
+                                <i class="fa-solid fa-desktop"></i>
+                            </span>
+                            <h3>Lab. 4</h3>
+                        </div>
+
+                        <div class="informacoes">
+                            <div class="info-linha">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>19/10/2026</span>
+                            </div>
+                            <div class="info-linha">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>13:00 - 14:00</span>
+                            </div>
+                        </div>
+
+                        <div class="situacao">
+                            <span class="status recusado">
+                                <i class="fa-solid fa-xmark"></i>
+                                Recusado
+                            </span>
+                        </div>
+
+                        <a href="#" class="btn-detalhes">
+                            Ver Detalhes
+                            <i class="fa-solid fa-angles-right"></i>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

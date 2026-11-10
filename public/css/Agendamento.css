@@ -1,0 +1,24 @@
+body {
+    gap: 10px;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+#atividade {
+    width: 500px;
+    height: 100px;
+}
+
+#enviar-solicitacao {
+    width: 200px;
+    height: 80px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+}

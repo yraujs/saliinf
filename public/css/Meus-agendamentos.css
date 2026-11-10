@@ -1,0 +1,457 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    min-height: 100%;
+    background-color: #EBF5FE;
+    color: #0A1F33;
+}
+
+header {
+    background-color: #103B60;
+    color: #fff;
+    padding: 5px 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+header p {
+    text-align: left;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-esquerda p {
+    text-align: left;
+    line-height: 1.5;
+}
+
+.header-esquerda span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.menu {
+    border-bottom: 3px solid #76C9F6;
+}
+
+main {
+    width: 94%;
+    max-width: 1600px;
+    margin: 25px auto;
+}
+
+.titulo-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.titulo-pagina h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.btn-solicitar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #07539D;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.btn-solicitar i {
+    font-size: 16px;
+}
+
+.btn-solicitar:hover {
+    background-color: #064581;
+}
+
+.painel-agendamentos {
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    padding: 18px 16px 28px;
+}
+
+.grupo-agendamentos {
+    width: 100%;
+}
+
+.titulo-grupo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #E9F2FC;
+    border-radius: 10px;
+    padding: 13px 20px;
+    min-height: 55px;
+}
+
+.titulo-grupo i {
+    font-size: 23px;
+    color: #0A1F33;
+    width: 30px;
+    text-align: center;
+}
+
+.titulo-grupo h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.lista-agendamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 13px;
+}
+
+.cartao-agendamento {
+    display: grid;
+    grid-template-columns: minmax(180px, 1.3fr) minmax(160px, 1.1fr) minmax(135px, 0.8fr) auto;
+    align-items: center;
+    gap: 15px;
+    min-height: 78px;
+    padding: 12px 20px;
+    background-color: #FCFCFD;
+    border: 1px solid #9CB7D0;
+    border-radius: 10px;
+}
+
+.laboratorio {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.icone-laboratorio {
+    width: 60px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #E9F2FC;
+    color: #3E7195;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icone-laboratorio i {
+    font-size: 26px;
+}
+
+.laboratorio h3 {
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-linha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.info-linha i {
+    width: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.situacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: default;
+    user-select: none;
+}
+
+.status i {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: white;
+}
+
+.status.aprovado {
+    background-color: #D9F3E5;
+    color: #17743B;
+}
+
+.status.aprovado i {
+    background-color: #42B353;
+}
+
+.status.recusado {
+    background-color: #FBE0E3;
+    color: #C6283E;
+}
+
+.status.recusado i {
+    background-color: #E54555;
+}
+
+.status.pendente {
+    background-color: #FFF0D2;
+    color: #946000;
+}
+
+.status.pendente i {
+    background-color: #E6A32C;
+}
+
+.btn-detalhes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    color: #103B60;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.btn-detalhes i {
+    color: #8FA6C0;
+    font-size: 14px;
+}
+
+.btn-detalhes:hover {
+    text-decoration: underline;
+}
+
+.historico {
+    margin-top: 25px;
+}
+
+@media (max-width: 1200px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-direita {
+        margin-left: auto;
+    }
+
+    nav a {
+        font-size: 17px;
+        margin: 0 5px;
+    }
+
+    .cartao-agendamento {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .situacao {
+        justify-content: flex-start;
+    }
+
+    .btn-detalhes {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .header-esquerda img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .header-esquerda span {
+        font-size: 20px;
+    }
+
+    .header-direita {
+        display: none;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 6px;
+        margin: 0 5px;
+    }
+
+    main {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .titulo-pagina {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 23px;
+    }
+
+    .btn-solicitar {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .painel-agendamentos {
+        padding: 12px 10px 20px;
+    }
+
+    .titulo-grupo {
+        padding: 12px;
+        min-height: 50px;
+        gap: 10px;
+    }
+
+    .titulo-grupo i {
+        font-size: 20px;
+        width: 25px;
+    }
+
+    .titulo-grupo h2 {
+        font-size: 18px;
+    }
+
+    .cartao-agendamento {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .laboratorio {
+        gap: 12px;
+    }
+
+    .icone-laboratorio {
+        width: 55px;
+        height: 45px;
+        border-radius: 12px;
+    }
+
+    .icone-laboratorio i {
+        font-size: 23px;
+    }
+
+    .laboratorio h3 {
+        font-size: 18px;
+    }
+
+    .info-linha {
+        font-size: 14px;
+    }
+
+    .info-linha i {
+        font-size: 16px;
+    }
+
+    .situacao {
+        justify-content: flex-start;
+    }
+
+    .status {
+        font-size: 13px;
+    }
+
+    .btn-detalhes {
+        justify-content: flex-start;
+    }
+}
