@@ -159,7 +159,7 @@ body::after {
 
 .divisoria {
     width: 3px;
-    height: 330px;
+    height: 400px;
     background-color: #8FC2F5;
     border-radius: 10px;
     flex-shrink: 0;
@@ -196,10 +196,10 @@ h1 {
 }
 
 h2 {
-    background-color: #0b2e4d;
+    background-color: transparent;
     border-radius: 20px;
     padding: 10px 20px;
-    color: white;
+    color: #0b2e4d;
     font-size: 24px;
     font-weight: 600;
     white-space: nowrap;
@@ -304,4 +304,16 @@ h2 {
         width: 280px;
         height: 160px;
     }
+}
+
+.textos button {
+    background-color: #0b2e4d;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
