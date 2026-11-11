@@ -1,4 +1,5 @@
-const daoSolicitarAgendamento = require('../db/daoSolicitarAgendamento');
+const DaoSolicitarAgendamento = require('../db/DaoSolicitarAgendamento');
+const daoSolicitarAgendamento = new DaoSolicitarAgendamento();
 
 async function controllerSolicitarAgendamento(solicitacao) {
     let camposVazios = 0;
@@ -28,7 +29,13 @@ async function controllerSolicitarAgendamento(solicitacao) {
     }
 
     try{
-        const resposta = await daoSolicitarAgendamento(solicitacao);
+        const usuario = await daoSolicitarAgendamento.daoBuscarUsuario(solicitacao.idUsuario);
+        solicitacao.nomeCompleto = usuario?.nomeCompleto;
+        solicitacao.departamento = usuario?.departamento;
+
+        console.log(solicitacao);
+
+        const resposta = await daoSolicitarAgendamento.daoSolicitarAgendamento(solicitacao);
     
         return {
             success: resposta,

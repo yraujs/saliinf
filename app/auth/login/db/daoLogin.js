@@ -1,12 +1,16 @@
 const Login = require('../model/UsuarioLoginSchema');
 
 async function daoLogin(usuario) {
-    try{
-        const login = await Login.findOne({email: usuario.email});
 
-        if(login){
-            return login;
-        }
+    console.log('usuario chegando no dao:', usuario);
+    try{
+        const login = await Login.findOne({
+                email: usuario.email,
+                admin: false
+        });
+        
+        return login;
+
     }catch(erro){
         console.log(erro);
         return;

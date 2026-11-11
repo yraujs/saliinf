@@ -68,7 +68,7 @@ router.post('/api/login', async(req, res) => {
 
     const {email, senha} = req.body;
     const UsuarioLogin = require('../auth/login/model/UsuarioLogin');
-    const usuario = new UsuarioLogin(email, senha);
+    const usuario = new UsuarioLogin('123', email, senha, true);
 
     const controllerLogin = require('../auth/login/controller/controller');
     const resposta = await controllerLogin(usuario, res);
@@ -76,13 +76,14 @@ router.post('/api/login', async(req, res) => {
     res.json(resposta);
 });
 
-router.post('/api/solicitarAgendamento', async(req, res) => {
+router.post('/api/solicitarAgendamento', autenticar, async(req, res) => {
     console.log('solicitando agendamento...');
 
     const { diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade} = req.body;
+
     const gerarIdAgendamento = require('../controllers/solicitar-agendamento/service/gerarIdAgendamento');
     const Agendamento = require('../controllers/solicitar-agendamento/model/Agendamento');
-    const agendamento = new Agendamento(gerarIdAgendamento(), diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade, "pendente");
+    const agendamento = new Agendamento(gerarIdAgendamento(), req.usuario.id, "nomeCompleto", "...", diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade, "pendente");
 
     const controllerSolicitarAgendamento = require('../controllers/solicitar-agendamento/controller/controllerSolicitarAgendamento');
     const resposta = await controllerSolicitarAgendamento(agendamento);
@@ -96,9 +97,7 @@ router.post('/logout', autenticar, async(req, res) => {
     res.clearCookie("token");
     console.log('saindo do logout');
 
-    res.json({
-        mensagem: "Logout feito com sucesso"
-    })
+    return res.redirect('/');
 });
 
 module.exports = router;

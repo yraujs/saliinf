@@ -16,6 +16,14 @@ router.get('/agenda/geral', autenticar, async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/AgendaGeral.html'));
 });
 
+router.get('/agenda/laboratorio', autenticar, async(req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'views/AgendaLab.html'));
+});
+
+router.get('/meus-agendamentos', autenticar, async(req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'views/MeusAgendamentos.html'));
+})
+
 router.get('/agendamento', autenticar, async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/Solicitar-agendamento.html'));
 });
@@ -32,10 +40,6 @@ router.get('/ajuda', async(req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'views/Ajuda.html'));
 });
 
-router.get('/admin', autenticar, async(req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'views/admin/Admin-usuarios.html'));
-});
-
 function temToken(req, res, next){
     const token = req.cookies.token;
 
@@ -47,7 +51,17 @@ function temToken(req, res, next){
 
         jwt.verify(token, process.env.JWT_KEY);
 
-        return res.redirect('/autenticacao');
+        if(req?.admin?.admin){
+
+            return res.redirect('/admin/dashboard');
+
+        }else if(req?.usuario?.admin === false){
+
+            return res.redirect('/agenda/geral');
+
+        }
+
+        next();
 
     }catch(erro){
         console.log(erro);

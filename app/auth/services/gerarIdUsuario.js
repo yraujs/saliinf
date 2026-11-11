@@ -7,3 +7,4 @@ function gerarIdUsuario(){
 }
 
 module.exports=gerarIdUsuario;
+

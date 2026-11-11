@@ -1,6 +1,9 @@
 class Agendamento {
-    constructor(idAgendamento, diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade, status){
+    constructor(idAgendamento, idUsuario, nomeCompleto, departamento, diaAgendamento, horarioInicio, horarioTermino, laboratorio, atividade, status){
         this.idAgendamento = idAgendamento;
+        this.idUsuario = idUsuario;
+        this.nomeCompleto = nomeCompleto;
+        this.departamento = departamento;
         this.diaAgendamento = diaAgendamento;
         this.horarioInicio = horarioInicio;
         this.horarioTermino = horarioTermino;

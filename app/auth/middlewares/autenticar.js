@@ -12,7 +12,12 @@ async function autenticar(req, res, next){
 
         req.usuario = usuario;
 
-        console.log(req.usuario);
+        console.log("usuario:", req.usuario);
+
+        if(req.usuario.admin == true){
+            console.log('sai fora admin!');
+            return res.redirect('/admin/dashboard');
+        }
 
         console.log('tem token');
 

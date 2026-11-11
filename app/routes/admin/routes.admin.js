@@ -12,4 +12,13 @@ router.post('/admin/api/analisarCadastro', async(req, res) => {
     res.json(resposta);
 });
 
+router.post('/admin/api/login', async(req, res) => {
+    const { usuario } = req.body;
+
+    const controllerLoginAdmin = require('../../auth/login/admin/controller/controller');
+    const resposta = await controllerLoginAdmin(usuario, res);
+
+    res.json(resposta);
+});
+
 module.exports = router;

@@ -56,6 +56,7 @@ document.getElementById('btn-login').addEventListener('click', async() => {
         localStorage.setItem("token", dados.token);
         window.location.href="/agenda/geral";
     }else{
+        console.log(dados)
         console.log('raquel me deve 1000 reaix');
     }
 });

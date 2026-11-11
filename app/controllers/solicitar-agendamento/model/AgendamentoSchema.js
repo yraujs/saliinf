@@ -6,6 +6,21 @@ const AgendamentoSchema = new moongose.Schema({
         required: true
     },
 
+    idUsuario: {
+        type: String,
+        required: true
+    },
+
+    nomeCompleto: {
+        type: String,
+        required: true
+    },
+
+    departamento: {
+        type: String,
+        required: true
+    },
+
     diaAgendamento: {
         type: String,
         required: true

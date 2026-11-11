@@ -46,6 +46,10 @@ app.use(routes_app);
 const routes_app_admin = require('./app/routes/admin/routes.admin');
 app.use(routes_app_admin);
 
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'views/404.html'))
+});
+
 app.listen(3000, () => {
     console.log('servidor ligado');
 });
