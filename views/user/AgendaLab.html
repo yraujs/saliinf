@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda por Laboratório - SALIINF</title>
+    <link rel="stylesheet" href="../../public/css/AgendaLab.css">
+</head>
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="../../public/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="AgendaGeral.html" class="menu">Agenda</a></li>
+                <li><a href="MeusAgendamentos.html">Meus Agendamentos</a></li>
+                <li><a href="Sobre.html">Sobre</a></li>
+                <li><a href="Ajuda.html">Ajuda</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="barra-agenda">
+            <div class="controle-data">
+                <div class="campo-data">
+                    <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="5" width="18" height="16" rx="2"/>
+                        <path d="M7 2v6M17 2v6M3 10h18"/>
+                    </svg>
+                    <input type="date" id="data-agenda" value="2026-09-02">
+                </div>
+                <button class="botao-hoje" type="button">Hoje</button>
+            </div>
+
+            <div class="controle-laboratorio">
+                <div class="alternar-visualizacao">
+                    <a href="AgendaGeral.html" class="aba">Geral</a>
+                    <a href="AgendaLaboratorio.html" class="aba ativa">Por laboratório</a>
+                </div>
+
+                <div class="seletor-laboratorio">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="13" rx="1"/>
+                        <path d="M8 21h8M12 17v4"/>
+                    </svg>
+
+                    <select id="laboratorio" aria-label="Selecionar laboratório">
+                        <option value="1">Laboratório 1</option>
+                        <option value="2">Laboratório 2</option>
+                        <option value="3" selected>Laboratório 3</option>
+                        <option value="4">Laboratório 4</option>
+                        <option value="5">Laboratório 5</option>
+                        <option value="6">Laboratório 6</option>
+                        <option value="7">Laboratório 7</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="legenda-agenda">
+                <div class="item-legenda">
+                    <span class="circulo ocupado"></span>
+                    <span>Ocupado</span>
+                </div>
+                <div class="item-legenda">
+                    <span class="circulo disponivel"></span>
+                    <span>Disponível</span>
+                </div>
+                <div class="item-legenda">
+                    <span class="circulo manutencao"></span>
+                    <span>Manutenção</span>
+                </div>
+                <div class="item-legenda">
+                    <span class="circulo indisponivel"></span>
+                    <span>Indisponível</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="borda-esquerda">HORÁRIOS</th>
+                        <th>STATUS</th>
+                        <th>DEPARTAMENTO</th>
+                        <th>SOLICITANTE</th>
+                        <th class="borda-direita">ATIVIDADE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7:30 - 8:20</td>
+                        <td><span class="circulo ocupado"></span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8:20 - 9:10</td>
+                        <td><span class="circulo disponivel"></span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9:10 - 10:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10:20 - 11:10</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11:10 - 12:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="limpeza">LIMPEZA</td>
+                    </tr>
+                    <tr>
+                        <td>13:00 - 14:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15:00 - 16:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 17:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 18:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="borda-inferior-esquerda">18:00 - 19:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="borda-inferior-direita"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
