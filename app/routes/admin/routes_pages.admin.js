@@ -30,7 +30,13 @@ router.get('/admin/cadastros-pendentes', autenticarAdmin, async(req, res) => {
 });
 
 router.get('/admin/usuarios', autenticarAdmin, async(req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', '..', 'views/admin/Admin-usuarios.html'));
+    const daoUsuarios = require('../../render/usuarios/db/daoUsuarios');
+    const usuarios = await daoUsuarios();
+
+    res.render(path.join("admin/Admin-usuarios"), {
+        layout: false,
+        usuarios: usuarios
+    });
 });
 
 module.exports = router;

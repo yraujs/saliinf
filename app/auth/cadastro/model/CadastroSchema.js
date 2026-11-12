@@ -37,13 +37,18 @@ const CadastroSchema = new moongose.Schema({
         require: true
     },
 
+    status: {
+        type: String,
+        require: true
+    },
+
     admin: {
         type: Boolean,
         require: true
     },
 
 }, {
-    collection: process.env.COLLECTION_FOR_REGISTRATION_PENDING
+    collection: process.env.COLLECTION_FOR_USERS
 });
 
 module.exports= moongose.model("Cadastro", CadastroSchema);

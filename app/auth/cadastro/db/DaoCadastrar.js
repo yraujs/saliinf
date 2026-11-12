@@ -23,15 +23,10 @@ class DaoCadastrar{
             console.log('lalala');
 
             const usuarioExiste = await Usuario.findOne({email: email}).lean();
-            const existeCadastroPendente = await Cadastro.findOne({email: email}).lean();
 
-            console.log('merda');
-
-            console.log(existeCadastroPendente);
             console.log(usuarioExiste);
-            console.log('bosta');
 
-            if(existeCadastroPendente?.email == null && usuarioExiste?.email == null){
+            if(usuarioExiste?.email == null){
                 console.log('usuario com esse email não existe!');
                 return false;
             }else{
@@ -46,14 +41,13 @@ class DaoCadastrar{
 
     async daoCriarUsuario(idUsuario){
        try{
-        const usuarioResgatado = await Cadastro.findOne({idUsuario: idUsuario}).lean();
-        console.log('usuario resgatado:', usuarioResgatado);
+        console.log(idUsuario);
 
-        const usuario = new UsuarioCadastro(usuarioResgatado.idUsuario, usuarioResgatado.nomeCompleto, usuarioResgatado.email, usuarioResgatado.senha, null, null, usuarioResgatado.departamento, usuarioResgatado.admin);
-        delete usuario.confirmarSenha;
-
-        const criarUsuario = await Usuario.create(usuario);
-        await Cadastro.findOneAndDelete({idUsuario: idUsuario});
+        const criarUsuario = await Cadastro.findOneAndUpdate(
+            {idUsuario: idUsuario},
+            {status: "cadastrado"},
+            {new: true}
+        )
 
         if(criarUsuario){
             return true;

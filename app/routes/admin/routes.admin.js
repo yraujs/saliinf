@@ -21,4 +21,13 @@ router.post('/admin/api/login', async(req, res) => {
     res.json(resposta);
 });
 
+router.delete('/admin/api/excluirUsuario', async(req, res) => {
+    const {idUsuario} = req.body;
+
+    const deletarUsuario = require('../../controllers/deletar-usuario/db/deletarUsuario');
+    const resposta = await deletarUsuario(idUsuario);
+
+    res.json({success: resposta})
+});
+
 module.exports = router;

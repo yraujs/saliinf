@@ -5,7 +5,8 @@ const daoCadastrar = new DaoCadastrar();
 
 class ControllerCadastro{
     async controllerVerificarCadastro(usuario) {
-    
+        
+
         //Verificando se algum campo está vazio
         let camposVazios = 0;
         for(let atributo in usuario){
