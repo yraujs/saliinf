@@ -105,6 +105,7 @@ header p {
     width: 95%;
     margin: 35px auto 30px;
     gap: 20px;
+    position: relative;
 }
 
 .controle-data {
@@ -151,18 +152,39 @@ header p {
     border: 1px solid #003B70;
     border-radius: 25px;
     overflow: hidden;
+    width: 230px;
     height: 42px;
+    box-sizing: border-box;
     flex-shrink: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .aba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     background-color: transparent;
     border: none;
     color: #003B70;
-    padding: 0 22px;
+    padding: 0;
     font-size: 14px;
     font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
+}
+
+.aba:first-child {
+    width: 36%;
+}
+
+.aba:last-child {
+    width: 64%;
 }
 
 .aba.ativa {
@@ -179,6 +201,7 @@ header p {
     border: 1px solid #B6D6EF;
     border-radius: 8px;
     padding: 13px 14px;
+    margin-left: auto;
 }
 
 .item-legenda {
@@ -195,6 +218,7 @@ header p {
     height: 16px;
     border-radius: 50%;
     display: inline-block;
+    vertical-align: middle;
     flex-shrink: 0;
 }
 
@@ -303,6 +327,12 @@ table td {
         margin-right: auto;
     }
 
+    .alternar-visualizacao {
+        position: static;
+        transform: none;
+        order: 3;
+    }
+
     .legenda-agenda {
         margin-left: auto;
     }
@@ -343,14 +373,28 @@ table td {
     }
 
     .barra-agenda {
+        flex-direction: column;
+        align-items: stretch;
         width: 95%;
     }
 
     .controle-data {
         flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    .alternar-visualizacao {
+        align-self: center;
+        order: 0;
     }
 
     .legenda-agenda {
+        margin-left: 0;
+        justify-content: center;
         flex-wrap: wrap;
+    }
+
+    table {
+        width: 95%;
     }
 }

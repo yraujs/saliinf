@@ -58,26 +58,6 @@ header p {
     gap: 40px;
 }
 
-.botao-entrar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 40px;
-    border-radius: 20px;
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.botao-entrar:hover {
-    background-color: white;
-    color: #103B60;
-}
-
 .header-esquerda {
     display: flex;
     align-items: center;
@@ -100,20 +80,18 @@ header p {
 
 .barra-agenda {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     width: 95%;
-    margin: 35px auto 12px;
+    margin: 35px auto 0;
     gap: 20px;
     position: relative;
-    min-height: 88px;
 }
 
 .controle-data {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex: 1;
 }
 
 .campo-data {
@@ -135,7 +113,7 @@ header p {
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    width: 150px;
+    width: 170px;
 }
 
 .botao-hoje {
@@ -149,72 +127,50 @@ header p {
     cursor: pointer;
 }
 
-.controle-laboratorio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
 .alternar-visualizacao {
     display: flex;
     border: 1px solid #003B70;
     border-radius: 25px;
     overflow: hidden;
+    width: 230px;
     height: 42px;
+    box-sizing: border-box;
     flex-shrink: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .aba {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     background-color: transparent;
+    border: none;
     color: #003B70;
-    padding: 0 22px;
+    padding: 0;
     font-size: 14px;
     font-weight: bold;
+    font-family: Arial, sans-serif;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
+}
+
+.aba:first-child {
+    width: 36%;
+}
+
+.aba:last-child {
+    width: 64%;
 }
 
 .aba.ativa {
     background-color: #003B70;
     color: white;
     border-radius: 25px;
-}
-
-.seletor-laboratorio {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    background-color: #07539D;
-    border-radius: 7px;
-    padding: 9px 14px;
-    color: white;
-}
-
-.seletor-laboratorio svg {
-    flex-shrink: 0;
-}
-
-.seletor-laboratorio select {
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.seletor-laboratorio option {
-    color: #103B60;
-    background-color: white;
 }
 
 .legenda-agenda {
@@ -225,9 +181,6 @@ header p {
     border: 1px solid #B6D6EF;
     border-radius: 8px;
     padding: 13px 14px;
-    justify-content: flex-end;
-    width: max-content;
-    flex-grow: 0;
     margin-left: auto;
 }
 
@@ -263,6 +216,46 @@ header p {
 
 .circulo.indisponivel {
     background-color: #444444;
+}
+
+.area-seletor {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    margin: 8px auto 8px;
+}
+
+.seletor-laboratorio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 240px;
+    box-sizing: border-box;
+    background-color: #07539D;
+    border-radius: 7px;
+    padding: 9px 14px;
+    color: white;
+}
+
+.seletor-laboratorio svg {
+    flex-shrink: 0;
+}
+
+.seletor-laboratorio select {
+    width: 100%;
+    min-width: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.seletor-laboratorio option {
+    color: #103B60;
+    background-color: white;
 }
 
 .container-tabela {
@@ -370,15 +363,6 @@ table td.limpeza {
     border-bottom-left-radius: 10px;
 }
 
-@media (min-width: 1101px) {
-    .controle-laboratorio {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-    }
-}
-
 @media (max-width: 1300px) {
     header {
         flex-wrap: wrap;
@@ -402,16 +386,17 @@ table td.limpeza {
     .barra-agenda {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 18px;
+        row-gap: 18px;
     }
 
     .controle-data {
-        flex: 1;
+        margin-right: auto;
     }
 
-    .controle-laboratorio {
+    .alternar-visualizacao {
+        position: static;
+        transform: none;
         order: 3;
-        width: 100%;
     }
 
     .legenda-agenda {
@@ -437,11 +422,6 @@ table td.limpeza {
         display: none;
     }
 
-    .botao-entrar {
-        padding: 10px 40px;
-        font-size: 14px;
-    }
-
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -454,7 +434,6 @@ table td.limpeza {
     }
 
     .barra-agenda {
-        display: flex;
         flex-direction: column;
         align-items: stretch;
         width: 95%;
@@ -463,17 +442,22 @@ table td.limpeza {
 
     .controle-data {
         flex-wrap: wrap;
+        margin-right: 0;
     }
 
-    .controle-laboratorio {
+    .alternar-visualizacao {
         align-self: center;
+        order: 0;
     }
 
     .legenda-agenda {
         margin-left: 0;
         justify-content: center;
         flex-wrap: wrap;
-        width: auto;
+    }
+
+    .area-seletor {
+        margin-top: 12px;
     }
 
     table {
