@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Solicitação - SALIINF</title>
+    <link rel="stylesheet" href="../../public/css/Detalhes-solicitacao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="../../public/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="Solicitacoes.html" class="menu">Solicitações</a></li>
+                <li><a href="/admin/usuarios">Usuários</a></li>
+                <li><a href="#">Laboratórios</a></li>
+                <li><a href="#">Calendário Letivo</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+            <button type="button">Administrador</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-principal">
+            <div class="cabecalho-pagina">
+                <div>
+                    <h1>Detalhes da Solicitação</h1>
+                    <p class="subtitulo">Informações do agendamento solicitado</p>
+                </div>
+
+                <span class="status pendente">
+                    <i class="fa-regular fa-clock"></i>
+                    Pendente
+                </span>
+            </div>
+
+            <section class="painel-detalhes">
+                <div class="secao-professor">
+                    <div class="avatar">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <div class="dados-professor">
+                        <span class="rotulo">Solicitante</span>
+                        <h2>Jucimar</h2>
+                        <p>Departamento de Informática - DAIC</p>
+                    </div>
+                </div>
+
+                <div class="divisor"></div>
+
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-regular fa-calendar"></i>
+                        <h3>Dia</h3>
+                    </div>
+
+                    <div class="conteudo-campo">
+                        <div class="valor-campo">
+                            19/10/2026
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-regular fa-clock"></i>
+                        <h3>Horário</h3>
+                    </div>
+
+                    <div class="horarios">
+                        <div class="grupo-horario">
+                            <span class="rotulo-horario">Horário de início</span>
+                            <div class="valor-campo">
+                                13:00
+                            </div>
+                        </div>
+
+                        <div class="grupo-horario">
+                            <span class="rotulo-horario">Horário de término</span>
+                            <div class="valor-campo">
+                                14:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <div class="titulo-campo">
+                        <i class="fa-solid fa-desktop"></i>
+                        <h3>Laboratório</h3>
+                    </div>
+
+                    <div class="conteudo-campo">
+                        <div class="valor-campo">
+                            Laboratório 3
+                        </div>
+                    </div>
+                </div>
+
+                <div class="campo campo-atividade">
+                    <div class="titulo-campo">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h3>Atividade</h3>
+                    </div>
+
+                    <div class="conteudo-campo">
+                        <div class="valor-campo valor-atividade">
+                            Aula prática de programação, com utilização dos computadores do laboratório para desenvolvimento de atividades da disciplina.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botoes">
+                    <a href="Solicitacoes.html" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

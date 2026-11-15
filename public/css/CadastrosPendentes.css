@@ -40,3 +40,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+nav a:hover {
+    color: #76C9F6;
+}

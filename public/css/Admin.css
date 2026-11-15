@@ -1,73 +1,17 @@
-*{
+
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-html, body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html, body {
+    min-height: 100%;
     background-color: #EBF5FE;
 }
 
-table th{
-    background-color: #103B60;
-    color: #fff;
-    padding: 10px;
-    height: 30px;
-}
-
-table{
-    background-color: #81A9CD;
-    border-collapse: separate;
-    border-spacing: 2px;
-    min-width: 95%;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-table td{
-    background-color: #F6FAFE;
-    color: #000;
-    text-align: center;
-    font-size: 16px;
-    height: 50px;
-}
-
-.container-tabela{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.limpeza{
-    background-color: #AAC2D5;
-    color: #074675;
-    font-weight: bold;
-}
-
-.borda{
-    border-radius: 10px;
-}
-
-.borda-direita{
-    border-top-right-radius: 10px;
-}
-
-.borda-esquerda{
-    border-top-left-radius: 10px;
-}
-
-.borda-inferior-direita{
-    border-bottom-right-radius: 10px;
-}
-
-.borda-inferior-esquerda{
-    border-bottom-left-radius: 10px;
-}
-
-header{
+header {
     background-color: #103B60;
     color: #fff;
     padding: 5px 50px;
@@ -78,43 +22,42 @@ header{
     position: relative;
 }
 
-nav{
+nav {
     display: flex;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-nav a{
+nav a {
     color: #fff;
     text-decoration: none;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
     font-size: 20px;
     margin: 0 10px;
+    white-space: nowrap;
 }
 
-nav ul li{
+nav ul li {
     list-style: none;
 }
 
-nav ul{
+nav ul {
     display: flex;
     gap: 10px;
 }
 
-header p{
+header p {
     text-align: left;
 }
 
-.header-direita{
+.header-direita {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
-.header-direita button{
+.header-direita button {
     padding: 10px 15px;
     background-color: transparent;
     border: none;
@@ -123,23 +66,140 @@ header p{
     cursor: pointer;
 }
 
-.header-esquerda{
+.header-esquerda {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.header-esquerda p{
+.header-esquerda p {
     text-align: left;
     line-height: 1.5;
 }
 
-.header-esquerda span{
+.header-esquerda span {
     font-weight: bold;
     font-size: 20px;
 }
 
-.menu{
+.menu {
     border-bottom: 3px solid #76C9F6;
 }
 
+nav a:hover {
+    color: #76C9F6;
+}
+
+.container-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 25px;
+    overflow-x: auto;
+}
+
+table {
+    background-color: #81A9CD;
+    border-collapse: separate;
+    border-spacing: 2px;
+    width: 95%;
+    min-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+table th {
+    background-color: #103B60;
+    color: #fff;
+    padding: 10px;
+    height: 30px;
+}
+
+table td {
+    background-color: #F6FAFE;
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    height: 50px;
+}
+
+.limpeza {
+    background-color: #AAC2D5;
+    color: #074675;
+    font-weight: bold;
+}
+
+.borda {
+    border-radius: 10px;
+}
+
+.borda-direita {
+    border-top-right-radius: 10px;
+}
+
+.borda-esquerda {
+    border-top-left-radius: 10px;
+}
+
+.borda-inferior-direita {
+    border-bottom-right-radius: 10px;
+}
+
+.borda-inferior-esquerda {
+    border-bottom-left-radius: 10px;
+}
+
+@media (max-width: 1400px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 17px;
+        margin: 0 5px;
+    }
+
+    .header-direita {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .header-esquerda img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .header-direita p {
+        display: none;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    table {
+        min-width: 800px;
+    }
+}

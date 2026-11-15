@@ -22,3 +22,7 @@ body {
     background-color: blue;
     color: white;
 }
+
+nav a:hover {
+    color: #76C9F6;
+}

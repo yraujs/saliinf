@@ -62,6 +62,10 @@ nav a {
     white-space: nowrap;
 }
 
+nav a:hover {
+    color: #76C9F6;
+}
+
 .menu {
     border-bottom: 4px solid #76C9F6;
     border-radius: 2px;

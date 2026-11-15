@@ -398,3 +398,7 @@ table td {
         width: 95%;
     }
 }
+
+nav a:hover {
+    color: #76C9F6;
+}

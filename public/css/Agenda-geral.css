@@ -1,7 +1,6 @@
 
 * {
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -59,15 +58,6 @@ header p {
     gap: 40px;
 }
 
-.header-direita button {
-    padding: 10px 15px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
 .header-esquerda {
     display: flex;
     align-items: center;
@@ -95,6 +85,7 @@ header p {
     width: 95%;
     margin: 35px auto 30px;
     gap: 20px;
+    position: relative;
 }
 
 .controle-data {
@@ -141,18 +132,39 @@ header p {
     border: 1px solid #003B70;
     border-radius: 25px;
     overflow: hidden;
+    width: 230px;
     height: 42px;
+    box-sizing: border-box;
     flex-shrink: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .aba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     background-color: transparent;
     border: none;
     color: #003B70;
-    padding: 0 22px;
+    padding: 0;
     font-size: 14px;
     font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
+}
+
+.aba:first-child {
+    width: 36%;
+}
+
+.aba:last-child {
+    width: 64%;
 }
 
 .aba.ativa {
@@ -169,6 +181,7 @@ header p {
     border: 1px solid #B6D6EF;
     border-radius: 8px;
     padding: 13px 14px;
+    margin-left: auto;
 }
 
 .item-legenda {
@@ -185,6 +198,7 @@ header p {
     height: 16px;
     border-radius: 50%;
     display: inline-block;
+    vertical-align: middle;
     flex-shrink: 0;
 }
 
@@ -264,6 +278,25 @@ table td {
     border-bottom-left-radius: 10px;
 }
 
+@media (max-width: 1300px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-direita {
+        margin-left: auto;
+    }
+}
+
 @media (max-width: 1100px) {
     .barra-agenda {
         flex-wrap: wrap;
@@ -274,7 +307,73 @@ table td {
         margin-right: auto;
     }
 
+    .alternar-visualizacao {
+        position: static;
+        transform: none;
+        order: 3;
+    }
+
     .legenda-agenda {
         margin-left: auto;
     }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .header-esquerda img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .header-direita {
+        gap: 10px;
+    }
+
+    .header-direita p {
+        display: none;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .barra-agenda {
+        flex-direction: column;
+        align-items: stretch;
+        width: 95%;
+    }
+
+    .controle-data {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    .alternar-visualizacao {
+        align-self: center;
+        order: 0;
+    }
+
+    .legenda-agenda {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    table {
+        width: 95%;
+    }
+}
+
+nav a:hover {
+    color: #76C9F6;
 }

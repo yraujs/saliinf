@@ -48,6 +48,10 @@ nav ul {
     gap: 10px;
 }
 
+nav a:hover {
+    color: #76C9F6;
+}
+
 header p {
     text-align: left;
 }

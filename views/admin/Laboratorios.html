@@ -1,0 +1,1029 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratórios - SALIINF</title>
+    <link rel="stylesheet" href="../../public/css/Laboratorios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="../../public/img/logo saliinf.png" alt="Logo do Saliinf" width="100" height="100">
+            <p><span>SALIINF</span><br>DAIC - IFAM CMC</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#">Solicitações</a></li>
+                <li><a href="/admin/usuarios">Usuários</a></li>
+                <li><a href="#" class="menu">Laboratórios</a></li>
+                <li><a href="#">Calendário Letivo</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-direita">
+            <p>
+                Sist. de Agendamento de <br>
+                Laboratórios de Informática
+            </p>
+            <button type="button">Administrador</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="titulo-pagina">
+            <h1>Laboratórios</h1>
+
+            <a href="#cadastrar-laboratorio" class="btn-principal">
+                <i class="fa-solid fa-plus"></i>
+                Novo Laboratório
+            </a>
+        </div>
+
+        <section class="painel-laboratorios">
+            <div class="titulo-painel">
+                <h2>Laboratórios cadastrados</h2>
+                <span>4 laboratórios</span>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Laboratório</th>
+                            <th>Situação atual</th>
+                            <th>Programação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="identificacao-lab">
+                                    <div class="icone-lab">
+                                        <i class="fa-solid fa-desktop"></i>
+                                    </div>
+                                    <strong>Lab 1</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status disponivel">
+                                    <span class="bolinha"></span>
+                                    Disponível
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="sem-programacao">
+                                    Nenhum bloqueio programado
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <a href="#bloqueios-lab1" class="btn-gerenciar">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Gerenciar
+                                    </a>
+
+                                    <a href="#excluir-lab1" class="btn-excluir" title="Excluir laboratório">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="identificacao-lab">
+                                    <div class="icone-lab">
+                                        <i class="fa-solid fa-desktop"></i>
+                                    </div>
+                                    <strong>Lab 2</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status manutencao">
+                                    <span class="bolinha"></span>
+                                    Manutenção
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="programacao">
+                                    <strong>Manutenção em andamento</strong>
+                                    <span>Até 18/11/2026, às 17:00</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <a href="#bloqueios-lab2" class="btn-gerenciar">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Gerenciar
+                                    </a>
+
+                                    <a href="#excluir-lab2" class="btn-excluir" title="Excluir laboratório">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="identificacao-lab">
+                                    <div class="icone-lab">
+                                        <i class="fa-solid fa-desktop"></i>
+                                    </div>
+                                    <strong>Lab 3</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status disponivel">
+                                    <span class="bolinha"></span>
+                                    Disponível
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="programacao">
+                                    <strong class="programado">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                        Manutenção programada
+                                    </strong>
+                                    <span>20/11/2026, das 13:00 às 17:00</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <a href="#bloqueios-lab3" class="btn-gerenciar">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Gerenciar
+                                    </a>
+
+                                    <a href="#excluir-lab3" class="btn-excluir" title="Excluir laboratório">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="identificacao-lab">
+                                    <div class="icone-lab">
+                                        <i class="fa-solid fa-desktop"></i>
+                                    </div>
+                                    <strong>Lab 4</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="status indisponivel">
+                                    <span class="bolinha"></span>
+                                    Indisponível
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="programacao">
+                                    <strong>Indisponibilidade em andamento</strong>
+                                    <span>Até 22/11/2026</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <a href="#bloqueios-lab4" class="btn-gerenciar">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Gerenciar
+                                    </a>
+
+                                    <a href="#excluir-lab4" class="btn-excluir" title="Excluir laboratório">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="cadastrar-laboratorio" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <div>
+                    <h2>Novo Laboratório</h2>
+                    <p>Cadastre um novo laboratório no sistema.</p>
+                </div>
+
+                <a href="#" class="fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="campo">
+                    <label for="numero-laboratorio">Número do laboratório</label>
+                    <input type="number" id="numero-laboratorio" placeholder="Ex.: 5" min="1">
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Cancelar</a>
+                <a href="#" class="btn-confirmar">Cadastrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bloqueios-lab1" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Gerenciar Laboratório 1</h2>
+                    <p>Consulte ou programe bloqueios para este laboratório.</p>
+                </div>
+
+                <a href="#" class="fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="resumo-laboratorio">
+                    <strong>Lab 1</strong>
+                    <span class="status disponivel">
+                        <span class="bolinha"></span>
+                        Disponível
+                    </span>
+                </div>
+
+                <div class="estado-vazio">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <h3>Nenhum bloqueio cadastrado</h3>
+                    <p>Este laboratório não possui manutenções ou indisponibilidades programadas.</p>
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Fechar</a>
+                <a href="#novo-bloqueio-lab1" class="btn-confirmar">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo Bloqueio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bloqueios-lab2" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Gerenciar Laboratório 2</h2>
+                    <p>Consulte ou altere os bloqueios deste laboratório.</p>
+                </div>
+
+                <a href="#" class="fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="resumo-laboratorio">
+                    <strong>Lab 2</strong>
+                    <span class="status manutencao">
+                        <span class="bolinha"></span>
+                        Manutenção
+                    </span>
+                </div>
+
+                <div class="cartao-bloqueio">
+                    <div class="bloqueio-topo">
+                        <h3>Manutenção preventiva</h3>
+                        <span class="etiqueta andamento">Em andamento</span>
+                    </div>
+
+                    <div class="detalhes-bloqueio">
+                        <p><i class="fa-regular fa-calendar"></i> 16/11/2026 às 08:00</p>
+                        <p><i class="fa-regular fa-clock"></i> Até 18/11/2026 às 17:00</p>
+                    </div>
+
+                    <div class="botoes-bloqueio">
+                        <a href="#editar-bloqueio-lab2" class="btn-secundario">
+                            <i class="fa-solid fa-pen"></i>
+                            Editar período
+                        </a>
+
+                        <a href="#encerrar-bloqueio-lab2" class="btn-secundario">
+                            <i class="fa-regular fa-circle-check"></i>
+                            Encerrar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Fechar</a>
+                <a href="#novo-bloqueio-lab2" class="btn-confirmar">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo Bloqueio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bloqueios-lab3" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Gerenciar Laboratório 3</h2>
+                    <p>Consulte ou altere os bloqueios deste laboratório.</p>
+                </div>
+
+                <a href="#" class="fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="resumo-laboratorio">
+                    <strong>Lab 3</strong>
+                    <span class="status disponivel">
+                        <span class="bolinha"></span>
+                        Disponível
+                    </span>
+                </div>
+
+                <div class="cartao-bloqueio">
+                    <div class="bloqueio-topo">
+                        <h3>Manutenção preventiva</h3>
+                        <span class="etiqueta futura">Programado</span>
+                    </div>
+
+                    <div class="detalhes-bloqueio">
+                        <p><i class="fa-regular fa-calendar"></i> 20/11/2026</p>
+                        <p><i class="fa-regular fa-clock"></i> 13:00 às 17:00</p>
+                    </div>
+
+                    <div class="aviso-informativo">
+                        <i class="fa-solid fa-circle-info"></i>
+                        O laboratório permanece disponível até o início da manutenção.
+                    </div>
+
+                    <div class="botoes-bloqueio">
+                        <a href="#editar-bloqueio-lab3" class="btn-secundario">
+                            <i class="fa-solid fa-pen"></i>
+                            Editar período
+                        </a>
+
+                        <a href="#cancelar-bloqueio-lab3" class="btn-perigo">
+                            <i class="fa-solid fa-xmark"></i>
+                            Cancelar bloqueio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Fechar</a>
+                <a href="#novo-bloqueio-lab3" class="btn-confirmar">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo Bloqueio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bloqueios-lab4" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Gerenciar Laboratório 4</h2>
+                    <p>Consulte ou altere os bloqueios deste laboratório.</p>
+                </div>
+
+                <a href="#" class="fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="resumo-laboratorio">
+                    <strong>Lab 4</strong>
+                    <span class="status indisponivel">
+                        <span class="bolinha"></span>
+                        Indisponível
+                    </span>
+                </div>
+
+                <div class="cartao-bloqueio">
+                    <div class="bloqueio-topo">
+                        <h3>Indisponibilidade temporária</h3>
+                        <span class="etiqueta andamento">Em andamento</span>
+                    </div>
+
+                    <div class="detalhes-bloqueio">
+                        <p><i class="fa-regular fa-calendar"></i> 14/11/2026 a 22/11/2026</p>
+                        <p><i class="fa-regular fa-clock"></i> Dias inteiros</p>
+                    </div>
+
+                    <div class="botoes-bloqueio">
+                        <a href="#editar-bloqueio-lab4" class="btn-secundario">
+                            <i class="fa-solid fa-pen"></i>
+                            Editar período
+                        </a>
+
+                        <a href="#encerrar-bloqueio-lab4" class="btn-secundario">
+                            <i class="fa-regular fa-circle-check"></i>
+                            Encerrar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Fechar</a>
+                <a href="#novo-bloqueio-lab4" class="btn-confirmar">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo Bloqueio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="novo-bloqueio-lab1" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Novo Bloqueio</h2>
+                    <p>Laboratório 1</p>
+                </div>
+                <a href="#bloqueios-lab1" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="campo">
+                        <label for="tipo-lab1">Tipo de bloqueio</label>
+                        <select id="tipo-lab1">
+                            <option>Manutenção</option>
+                            <option>Indisponibilidade</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo-lab1">Duração</label>
+                        <select id="periodo-lab1">
+                            <option>Horário específico</option>
+                            <option>Dias inteiros</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="inicio-lab1">Data inicial</label>
+                            <input type="date" id="inicio-lab1">
+                        </div>
+                        <div class="campo">
+                            <label for="fim-lab1">Data final</label>
+                            <input type="date" id="fim-lab1">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="hora-inicio-lab1">Hora inicial</label>
+                            <input type="time" id="hora-inicio-lab1">
+                        </div>
+                        <div class="campo">
+                            <label for="hora-fim-lab1">Hora final</label>
+                            <input type="time" id="hora-fim-lab1">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="motivo-lab1">Motivo</label>
+                        <textarea id="motivo-lab1" placeholder="Informe o motivo do bloqueio"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab1" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Bloqueio</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="novo-bloqueio-lab2" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Novo Bloqueio</h2>
+                    <p>Laboratório 2</p>
+                </div>
+                <a href="#bloqueios-lab2" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="campo">
+                        <label for="tipo-lab2">Tipo de bloqueio</label>
+                        <select id="tipo-lab2">
+                            <option>Manutenção</option>
+                            <option>Indisponibilidade</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo-lab2">Duração</label>
+                        <select id="periodo-lab2">
+                            <option>Horário específico</option>
+                            <option>Dias inteiros</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="inicio-lab2">Data inicial</label>
+                            <input type="date" id="inicio-lab2">
+                        </div>
+                        <div class="campo">
+                            <label for="fim-lab2">Data final</label>
+                            <input type="date" id="fim-lab2">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="hora-inicio-lab2">Hora inicial</label>
+                            <input type="time" id="hora-inicio-lab2">
+                        </div>
+                        <div class="campo">
+                            <label for="hora-fim-lab2">Hora final</label>
+                            <input type="time" id="hora-fim-lab2">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="motivo-lab2">Motivo</label>
+                        <textarea id="motivo-lab2" placeholder="Informe o motivo do bloqueio"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab2" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Bloqueio</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="novo-bloqueio-lab3" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Novo Bloqueio</h2>
+                    <p>Laboratório 3</p>
+                </div>
+                <a href="#bloqueios-lab3" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="campo">
+                        <label for="tipo-lab3">Tipo de bloqueio</label>
+                        <select id="tipo-lab3">
+                            <option>Manutenção</option>
+                            <option>Indisponibilidade</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo-lab3">Duração</label>
+                        <select id="periodo-lab3">
+                            <option>Horário específico</option>
+                            <option>Dias inteiros</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="inicio-lab3">Data inicial</label>
+                            <input type="date" id="inicio-lab3">
+                        </div>
+                        <div class="campo">
+                            <label for="fim-lab3">Data final</label>
+                            <input type="date" id="fim-lab3">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="hora-inicio-lab3">Hora inicial</label>
+                            <input type="time" id="hora-inicio-lab3">
+                        </div>
+                        <div class="campo">
+                            <label for="hora-fim-lab3">Hora final</label>
+                            <input type="time" id="hora-fim-lab3">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="motivo-lab3">Motivo</label>
+                        <textarea id="motivo-lab3" placeholder="Informe o motivo do bloqueio"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab3" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Bloqueio</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="novo-bloqueio-lab4" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Novo Bloqueio</h2>
+                    <p>Laboratório 4</p>
+                </div>
+                <a href="#bloqueios-lab4" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="campo">
+                        <label for="tipo-lab4">Tipo de bloqueio</label>
+                        <select id="tipo-lab4">
+                            <option>Manutenção</option>
+                            <option>Indisponibilidade</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo-lab4">Duração</label>
+                        <select id="periodo-lab4">
+                            <option>Horário específico</option>
+                            <option>Dias inteiros</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="inicio-lab4">Data inicial</label>
+                            <input type="date" id="inicio-lab4">
+                        </div>
+                        <div class="campo">
+                            <label for="fim-lab4">Data final</label>
+                            <input type="date" id="fim-lab4">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="hora-inicio-lab4">Hora inicial</label>
+                            <input type="time" id="hora-inicio-lab4">
+                        </div>
+                        <div class="campo">
+                            <label for="hora-fim-lab4">Hora final</label>
+                            <input type="time" id="hora-fim-lab4">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="motivo-lab4">Motivo</label>
+                        <textarea id="motivo-lab4" placeholder="Informe o motivo do bloqueio"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab4" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Bloqueio</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="editar-bloqueio-lab2" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Editar Bloqueio</h2>
+                    <p>Laboratório 2 — Manutenção</p>
+                </div>
+                <a href="#bloqueios-lab2" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="editar-inicio2">Data inicial</label>
+                            <input type="date" id="editar-inicio2" value="2026-11-16">
+                        </div>
+                        <div class="campo">
+                            <label for="editar-fim2">Data final</label>
+                            <input type="date" id="editar-fim2" value="2026-11-18">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="editar-hora-inicio2">Hora inicial</label>
+                            <input type="time" id="editar-hora-inicio2" value="08:00">
+                        </div>
+                        <div class="campo">
+                            <label for="editar-hora-fim2">Hora final</label>
+                            <input type="time" id="editar-hora-fim2" value="17:00">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="editar-motivo2">Motivo da alteração</label>
+                        <textarea id="editar-motivo2" placeholder="Informe o motivo da alteração"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab2" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Alteração</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="editar-bloqueio-lab3" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Editar Bloqueio</h2>
+                    <p>Laboratório 3 — Manutenção programada</p>
+                </div>
+                <a href="#bloqueios-lab3" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="editar-inicio3">Data inicial</label>
+                            <input type="date" id="editar-inicio3" value="2026-11-20">
+                        </div>
+                        <div class="campo">
+                            <label for="editar-fim3">Data final</label>
+                            <input type="date" id="editar-fim3" value="2026-11-20">
+                        </div>
+                    </div>
+
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="editar-hora-inicio3">Hora inicial</label>
+                            <input type="time" id="editar-hora-inicio3" value="13:00">
+                        </div>
+                        <div class="campo">
+                            <label for="editar-hora-fim3">Hora final</label>
+                            <input type="time" id="editar-hora-fim3" value="17:00">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="editar-motivo3">Motivo da alteração</label>
+                        <textarea id="editar-motivo3" placeholder="Informe o motivo da alteração"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab3" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Alteração</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="editar-bloqueio-lab4" class="modal">
+        <div class="modal-conteudo modal-medio">
+            <div class="modal-topo">
+                <div>
+                    <h2>Editar Bloqueio</h2>
+                    <p>Laboratório 4 — Indisponibilidade</p>
+                </div>
+                <a href="#bloqueios-lab4" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <form class="formulario">
+                    <div class="grupo-campos">
+                        <div class="campo">
+                            <label for="editar-inicio4">Data inicial</label>
+                            <input type="date" id="editar-inicio4" value="2026-11-14">
+                        </div>
+                        <div class="campo">
+                            <label for="editar-fim4">Data final</label>
+                            <input type="date" id="editar-fim4" value="2026-11-22">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="editar-motivo4">Motivo da alteração</label>
+                        <textarea id="editar-motivo4" placeholder="Informe o motivo da alteração"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab4" class="btn-cancelar">Cancelar</a>
+                <a href="#confirmar-bloqueio" class="btn-confirmar">Salvar Alteração</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmar-bloqueio" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <div>
+                    <h2>Confirmar Bloqueio</h2>
+                </div>
+                <a href="#" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="aviso aviso-azul">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>O período definido ficará bloqueado para novos agendamentos. Verifique se não existem reservas aprovadas para o mesmo horário.</p>
+                </div>
+                <p class="texto-confirmacao">Deseja confirmar esta operação?</p>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Cancelar</a>
+                <a href="#" class="btn-confirmar">Confirmar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cancelar-bloqueio-lab3" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <div>
+                    <h2>Cancelar Bloqueio</h2>
+                </div>
+                <a href="#bloqueios-lab3" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="aviso aviso-vermelho">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Deseja cancelar a manutenção programada para o Laboratório 3?</p>
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab3" class="btn-cancelar">Voltar</a>
+                <a href="#" class="btn-confirmar-vermelho">Cancelar Bloqueio</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="encerrar-bloqueio-lab2" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <div>
+                    <h2>Encerrar Manutenção</h2>
+                </div>
+                <a href="#bloqueios-lab2" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="aviso aviso-azul">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Deseja encerrar antecipadamente a manutenção do Laboratório 2?</p>
+                </div>
+                <p class="texto-confirmacao">O laboratório poderá voltar a ficar disponível para novos agendamentos.</p>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab2" class="btn-cancelar">Voltar</a>
+                <a href="#" class="btn-confirmar">Confirmar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="encerrar-bloqueio-lab4" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <div>
+                    <h2>Encerrar Indisponibilidade</h2>
+                </div>
+                <a href="#bloqueios-lab4" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+
+            <div class="modal-corpo">
+                <div class="aviso aviso-azul">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Deseja encerrar antecipadamente a indisponibilidade do Laboratório 4?</p>
+                </div>
+            </div>
+
+            <div class="modal-rodape">
+                <a href="#bloqueios-lab4" class="btn-cancelar">Voltar</a>
+                <a href="#" class="btn-confirmar">Confirmar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="excluir-lab1" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <h2>Excluir Laboratório 1</h2>
+                <a href="#" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+            <div class="modal-corpo">
+                <div class="aviso aviso-vermelho">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Tem certeza de que deseja excluir o Laboratório 1?</p>
+                </div>
+                <p class="texto-confirmacao">A exclusão só deve ser permitida quando não existirem agendamentos vinculados.</p>
+            </div>
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Cancelar</a>
+                <a href="#" class="btn-confirmar-vermelho">Excluir</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="excluir-lab2" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <h2>Excluir Laboratório 2</h2>
+                <a href="#" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+            <div class="modal-corpo">
+                <div class="aviso aviso-vermelho">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Tem certeza de que deseja excluir o Laboratório 2?</p>
+                </div>
+                <p class="texto-confirmacao">A exclusão só deve ser permitida quando não existirem agendamentos vinculados.</p>
+            </div>
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Cancelar</a>
+                <a href="#" class="btn-confirmar-vermelho">Excluir</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="excluir-lab3" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <h2>Excluir Laboratório 3</h2>
+                <a href="#" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+            <div class="modal-corpo">
+                <div class="aviso aviso-vermelho">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Tem certeza de que deseja excluir o Laboratório 3?</p>
+                </div>
+                <p class="texto-confirmacao">A exclusão só deve ser permitida quando não existirem agendamentos vinculados.</p>
+            </div>
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Cancelar</a>
+                <a href="#" class="btn-confirmar-vermelho">Excluir</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="excluir-lab4" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-topo">
+                <h2>Excluir Laboratório 4</h2>
+                <a href="#" class="fechar"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+            <div class="modal-corpo">
+                <div class="aviso aviso-vermelho">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Tem certeza de que deseja excluir o Laboratório 4?</p>
+                </div>
+                <p class="texto-confirmacao">A exclusão só deve ser permitida quando não existirem agendamentos vinculados.</p>
+            </div>
+            <div class="modal-rodape">
+                <a href="#" class="btn-cancelar">Cancelar</a>
+                <a href="#" class="btn-confirmar-vermelho">Excluir</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

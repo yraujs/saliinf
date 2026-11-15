@@ -208,3 +208,7 @@ table td {
         margin: 0 5px;
     }
 }
+
+nav a:hover {
+    color: #76C9F6;
+}
