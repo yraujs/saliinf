@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5;url= Meus-agendamentos.html">
+    <meta http-equiv="refresh" content="5;url=Meus-agendamentos.html">
     <title>Solicitação Enviada</title>
     <link rel="stylesheet" href="../../public/css/Confirmacao-agendamento.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -18,10 +18,10 @@
 
         <nav>
             <ul>
-                <li><a href="#">Agenda</a></li>
-                <li><a href="../views/Meus-agendamentos.html" class="menu">Meus Agendamentos</a></li>
+                <li><a href="AgendaGeral.html">Agenda</a></li>
+                <li><a href="Meus-agendamentos.html" class="menu">Meus Agendamentos</a></li>
                 <li><a href="#">Sobre</a></li>
-                <li><a href="#">Fale Conosco</a></li>
+                <li><a href="#">Ajuda</a></li>
             </ul>
         </nav>
 
@@ -30,6 +30,19 @@
                 Sist. de Agendamento de <br>
                 Laboratórios de Informática
             </p>
+
+            <details class="dropdown-perfil">
+                <summary class="botao-perfil">
+                    Olá, usuário!
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                </summary>
+
+                <div class="menu-perfil">
+                    <a href="../TelaPublica.html">Sair</a>
+                </div>
+            </details>
         </div>
     </header>
 
@@ -65,7 +78,7 @@
                 <div class="progresso"></div>
             </div>
 
-            <a href="../views/Meus-agendamentos.html" class="btn-continuar">
+            <a href="Meus-agendamentos.html" class="btn-continuar">
                 Ir para Meus Agendamentos
                 <i class="fa-solid fa-arrow-right"></i>
             </a>

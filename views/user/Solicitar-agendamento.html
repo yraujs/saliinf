@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="AgendaGeral.html">Agenda</a></li>
-                <li><a href="#" class="menu">Meus Agendamentos</a></li>
+                <li><a href="Meus-agendamentos.html" class="menu">Meus Agendamentos</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Ajuda</a></li>
             </ul>
@@ -29,6 +29,19 @@
                 Sist. de Agendamento de <br>
                 Laboratórios de Informática
             </p>
+
+            <details class="dropdown-perfil">
+                <summary class="botao-perfil">
+                    Olá, usuário!
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                </summary>
+
+                <div class="menu-perfil">
+                    <a href="../TelaPublica.html">Sair</a>
+                </div>
+            </details>
         </div>
     </header>
 
@@ -134,14 +147,10 @@
                 </div>
 
                 <div class="botoes">
-                    <a href="#" class="btn-voltar">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Voltar
-                    </a>
-
                     <div class="botoes-direita">
-                        <a href="#" class="btn-cancelar">Cancelar</a>
-                        <button id="enviar-solicitacao" class="btn-enviar">
+                        <a href="Meus-agendamentos.html" class="btn-cancelar">Cancelar</a>
+
+                        <button type="submit" id="enviar-solicitacao" class="btn-enviar">
                             Enviar Solicitação
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
