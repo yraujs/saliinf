@@ -136,12 +136,12 @@ header p {
     width: 170px;
 }
 
-.botao-hoje {
-    background-color: #D7E8F8;
-    border: 1px solid #B6D6EF;
+.botao-aplicar {
+    background-color: #003B70;
+    border: 1px solid #003B70;
     border-radius: 8px;
     padding: 13px 24px;
-    color: #003B70;
+    color: #D7E8F8;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
