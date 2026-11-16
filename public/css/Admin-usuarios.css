@@ -249,12 +249,40 @@ table tbody tr:hover {
 
 .departamento {
     display: inline-block;
+    min-width: 110px;
+    max-width: 140px;
+    padding: 7px 30px 7px 14px;
     background-color: #D0E7FB;
     color: #103B60;
-    padding: 7px 14px;
+    border: 1px solid transparent;
     border-radius: 15px;
+    font-size: 15px;
     font-weight: 500;
-    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23103B60' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.departamento:hover {
+    background-color: #B9DCF7;
+}
+
+.departamento:focus {
+    border-color: #103B60;
+    background-color: #D0E7FB;
+}
+
+.departamento option {
+    background-color: #FFFFFF;
+    color: #103B60;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .status {
@@ -320,6 +348,10 @@ table tbody tr:hover {
 .btn-desbloquear:hover,
 .btn-aprovar:hover {
     background-color: #1A5A8C;
+}
+
+nav a:hover {
+    color: #76C9F6;
 }
 
 @media (max-width: 1400px) {
@@ -394,8 +426,4 @@ table tbody tr:hover {
     table {
         min-width: 950px;
     }
-}
-
-nav a:hover {
-    color: #76C9F6;
 }
