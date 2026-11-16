@@ -19,8 +19,8 @@
             <ul>
                 <li><a href="AgendaGeral.html">Agenda</a></li>
                 <li><a href="Meus-agendamentos.html" class="menu">Meus Agendamentos</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Ajuda</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Ajuda</a></li>
             </ul>
         </nav>
 
@@ -89,10 +89,17 @@
                             </span>
                         </div>
 
-                        <a href="#" class="btn-detalhes">
-                            Ver Detalhes
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
+                        <div class="acoes-agendamento">
+                            <a href="#" class="btn-detalhes">
+                                Ver Detalhes
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+
+                            <a href="#cancelar-1" class="btn-cancelar">
+                                <i class="fa-regular fa-circle-xmark"></i>
+                                Cancelar Agendamento
+                            </a>
+                        </div>
                     </article>
 
                     <article class="cartao-agendamento">
@@ -100,31 +107,38 @@
                             <span class="icone-laboratorio">
                                 <i class="fa-solid fa-desktop"></i>
                             </span>
-                            <h3>Lab. 4</h3>
+                            <h3>Lab. 2</h3>
                         </div>
 
                         <div class="informacoes">
                             <div class="info-linha">
                                 <i class="fa-regular fa-calendar"></i>
-                                <span>19/10/2026</span>
+                                <span>20/10/2026</span>
                             </div>
                             <div class="info-linha">
                                 <i class="fa-regular fa-clock"></i>
-                                <span>13:00 - 14:00</span>
+                                <span>08:00 - 10:00</span>
                             </div>
                         </div>
 
                         <div class="situacao">
-                            <span class="status aprovado">
-                                <i class="fa-solid fa-check"></i>
-                                Aprovado
+                            <span class="status pendente">
+                                <i class="fa-solid fa-clock"></i>
+                                Pendente
                             </span>
                         </div>
 
-                        <a href="#" class="btn-detalhes">
-                            Ver Detalhes
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
+                        <div class="acoes-agendamento">
+                            <a href="#" class="btn-detalhes">
+                                Ver Detalhes
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+
+                            <a href="#cancelar-2" class="btn-cancelar">
+                                <i class="fa-regular fa-circle-xmark"></i>
+                                Cancelar Agendamento
+                            </a>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -147,7 +161,7 @@
                         <div class="informacoes">
                             <div class="info-linha">
                                 <i class="fa-regular fa-calendar"></i>
-                                <span>19/10/2026</span>
+                                <span>15/10/2026</span>
                             </div>
                             <div class="info-linha">
                                 <i class="fa-regular fa-clock"></i>
@@ -162,14 +176,104 @@
                             </span>
                         </div>
 
-                        <a href="#" class="btn-detalhes">
-                            Ver Detalhes
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
+                        <div class="acoes-agendamento">
+                            <a href="#" class="btn-detalhes">
+                                Ver Detalhes
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-agendamento">
+                        <div class="laboratorio">
+                            <span class="icone-laboratorio">
+                                <i class="fa-solid fa-desktop"></i>
+                            </span>
+                            <h3>Lab. 3</h3>
+                        </div>
+
+                        <div class="informacoes">
+                            <div class="info-linha">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>10/10/2026</span>
+                            </div>
+                            <div class="info-linha">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>09:00 - 11:00</span>
+                            </div>
+                        </div>
+
+                        <div class="situacao">
+                            <span class="status cancelado">
+                                <i class="fa-solid fa-ban"></i>
+                                Cancelado
+                            </span>
+                        </div>
+
+                        <div class="acoes-agendamento">
+                            <a href="#" class="btn-detalhes">
+                                Ver Detalhes
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </div>
                     </article>
                 </div>
             </section>
         </div>
     </main>
+
+    <div id="cancelar-1" class="modal-overlay">
+        <div class="modal-confirmacao" role="dialog" aria-modal="true" aria-labelledby="titulo-cancelar-1">
+            <div class="modal-icone">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <h2 id="titulo-cancelar-1">Cancelar agendamento?</h2>
+
+            <p>
+                Tem certeza de que deseja cancelar o agendamento
+                do <strong>Lab. 4</strong>, no dia <strong>19/10/2026</strong>,
+                das <strong>13:00 às 14:00</strong>?
+            </p>
+
+            <p class="modal-aviso">
+                Esta ação não poderá ser desfeita.
+            </p>
+
+            <div class="modal-botoes">
+                <a href="#" class="modal-voltar">Voltar</a>
+                <a href="Meus-agendamentos.html" class="modal-confirmar">
+                    Sim, cancelar agendamento
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cancelar-2" class="modal-overlay">
+        <div class="modal-confirmacao" role="dialog" aria-modal="true" aria-labelledby="titulo-cancelar-2">
+            <div class="modal-icone">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <h2 id="titulo-cancelar-2">Cancelar agendamento?</h2>
+
+            <p>
+                Tem certeza de que deseja cancelar a solicitação
+                do <strong>Lab. 2</strong>, no dia <strong>20/10/2026</strong>,
+                das <strong>08:00 às 10:00</strong>?
+            </p>
+
+            <p class="modal-aviso">
+                Esta ação não poderá ser desfeita.
+            </p>
+
+            <div class="modal-botoes">
+                <a href="#" class="modal-voltar">Voltar</a>
+                <a href="Meus-agendamentos.html" class="modal-confirmar">
+                    Sim, cancelar agendamento
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

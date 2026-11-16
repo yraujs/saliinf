@@ -244,7 +244,7 @@ main {
 
 .cartao-agendamento {
     display: grid;
-    grid-template-columns: minmax(180px, 1.3fr) minmax(160px, 1.1fr) minmax(135px, 0.8fr) auto;
+    grid-template-columns: minmax(180px, 1.3fr) minmax(160px, 1.1fr) minmax(135px, 0.8fr) minmax(170px, auto);
     align-items: center;
     gap: 15px;
     min-height: 78px;
@@ -360,6 +360,22 @@ main {
     background-color: #E6A32C;
 }
 
+.status.cancelado {
+    background-color: #E8EDF2;
+    color: #526578;
+}
+
+.status.cancelado i {
+    background-color: #78899A;
+}
+
+.acoes-agendamento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
 .btn-detalhes {
     display: inline-flex;
     align-items: center;
@@ -381,8 +397,134 @@ main {
     text-decoration: underline;
 }
 
+.btn-cancelar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    color: #B63846;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.btn-cancelar i {
+    font-size: 14px;
+}
+
+.btn-cancelar:hover {
+    color: #8F2531;
+    text-decoration: underline;
+}
+
 .historico {
     margin-top: 25px;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(10, 31, 51, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-confirmacao {
+    width: 100%;
+    max-width: 480px;
+    background-color: #FFFFFF;
+    border: 1px solid #9CB7D0;
+    border-radius: 17px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.modal-icone {
+    width: 65px;
+    height: 65px;
+    background-color: #FFF0E8;
+    color: #C74B38;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.modal-icone i {
+    font-size: 27px;
+}
+
+.modal-confirmacao h2 {
+    color: #103B60;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.modal-confirmacao p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #425466;
+}
+
+.modal-confirmacao .modal-aviso {
+    font-size: 13px;
+    color: #B63846;
+    margin-top: 12px;
+}
+
+.modal-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.modal-voltar,
+.modal-confirmar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.modal-voltar {
+    background-color: #EAF1F7;
+    color: #103B60;
+    min-width: 100px;
+}
+
+.modal-voltar:hover {
+    background-color: #DCE8F2;
+}
+
+.modal-confirmar {
+    background-color: #B63846;
+    color: #FFFFFF;
+    flex: 1;
+}
+
+.modal-confirmar:hover {
+    background-color: #922A36;
 }
 
 @media (max-width: 1200px) {
@@ -417,8 +559,8 @@ main {
         justify-content: flex-start;
     }
 
-    .btn-detalhes {
-        justify-content: flex-end;
+    .acoes-agendamento {
+        align-items: flex-end;
     }
 }
 
@@ -541,7 +683,30 @@ main {
         font-size: 13px;
     }
 
-    .btn-detalhes {
+    .acoes-agendamento {
+        align-items: flex-start;
+    }
+
+    .btn-detalhes,
+    .btn-cancelar {
         justify-content: flex-start;
+    }
+
+    .modal-confirmacao {
+        padding: 25px 20px;
+    }
+
+    .modal-confirmacao h2 {
+        font-size: 21px;
+    }
+
+    .modal-botoes {
+        flex-direction: column;
+    }
+
+    .modal-voltar,
+    .modal-confirmar {
+        width: 100%;
+        min-height: 44px;
     }
 }
