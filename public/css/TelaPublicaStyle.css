@@ -402,3 +402,12 @@ table td {
 nav a:hover {
     color: #76C9F6;
 }
+
+.circulo-ocupado{
+    background-color: #FF003D;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    margin: 2px auto;
+}
