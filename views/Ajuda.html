@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajuda</title>
+    <title>Ajuda - SALIINF</title>
     <link rel="stylesheet" href="../public/css/Ajuda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header>
@@ -31,5 +32,242 @@
             <a href="../views/Validacao-cadastro.html" class="botao-entrar">Entrar</a>
         </div>
     </header>
+
+    <main>
+        <div class="titulo-pagina">
+            <h1>Central de Ajuda</h1>
+            <p>Encontre orientações e respostas para as principais dúvidas sobre o SALIINF.</p>
+        </div>
+
+        <section class="secao-orientacoes">
+            <div class="titulo-secao">
+                <i class="fa-regular fa-circle-question"></i>
+                <h2>Como utilizar o SALIINF?</h2>
+            </div>
+
+            <div class="cards-orientacoes">
+                <article class="card">
+                    <div class="icone-card">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+
+                    <h3>1. Consulte a agenda</h3>
+
+                    <p>
+                        Acesse a página Agenda para visualizar os horários
+                        disponíveis e ocupados dos laboratórios de informática.
+                        Não é necessário entrar em uma conta para consultar a agenda.
+                    </p>
+
+                    <a href="../views/AgendaGeral.html" class="link-card">
+                        Consultar agenda
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="icone-card">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <h3>2. Acesse sua conta</h3>
+
+                    <p>
+                        Para solicitar um agendamento, entre com suas credenciais.
+                        Caso ainda não tenha uma conta, realize o cadastro
+                        utilizando seu e-mail institucional do IFAM.
+                    </p>
+
+                    <a href="../views/Validacao-cadastro.html" class="link-card">
+                        Entrar ou cadastrar-se
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="icone-card">
+                        <i class="fa-regular fa-calendar-plus"></i>
+                    </div>
+
+                    <h3>3. Solicite um agendamento</h3>
+
+                    <p>
+                        Após entrar no sistema, selecione a opção
+                        Solicitar Agendamento, informe a data, os horários,
+                        o laboratório desejado e a atividade que será realizada.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icone-card">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+
+                    <h3>4. Acompanhe sua solicitação</h3>
+
+                    <p>
+                        Acesse Meus Agendamentos para verificar a situação
+                        das solicitações enviadas. A utilização do laboratório
+                        depende da aprovação do responsável.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-perguntas">
+            <div class="titulo-secao">
+                <i class="fa-regular fa-comments"></i>
+                <h2>Perguntas frequentes</h2>
+            </div>
+
+            <p class="descricao-secao">
+                Clique em uma pergunta para visualizar a resposta.
+            </p>
+
+            <div class="lista-perguntas">
+                <details class="pergunta">
+                    <summary>
+                        Preciso ter uma conta para consultar a agenda?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            Não. A consulta à agenda geral dos laboratórios
+                            é pública e pode ser realizada sem cadastro ou login.
+                            Entretanto, para solicitar agendamentos, é necessário
+                            possuir uma conta no SALIINF.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="pergunta">
+                    <summary>
+                        Quem pode solicitar agendamentos?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            Professores autorizados do IFAM podem solicitar
+                            a utilização dos laboratórios. O cadastro deve
+                            ser realizado com um e-mail institucional, e o
+                            acesso depende da autorização do laboratorista.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="pergunta">
+                    <summary>
+                        Como faço para solicitar um laboratório?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            Após entrar na sua conta, acesse Meus Agendamentos
+                            e clique em Solicitar Agendamento. Preencha a data,
+                            os horários de início e término, selecione o
+                            laboratório e descreva a atividade. Em seguida,
+                            envie a solicitação.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="pergunta">
+                    <summary>
+                        Minha solicitação é aprovada automaticamente?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            Não. Após o envio, a solicitação fica pendente
+                            de análise pelo responsável pela administração
+                            dos laboratórios. Você poderá acompanhar o
+                            resultado em Meus Agendamentos.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="pergunta">
+                    <summary>
+                        Posso cancelar um agendamento?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            Sim. Na página Meus Agendamentos, localize o
+                            agendamento ativo e selecione Cancelar Agendamento.
+                            Será exibida uma confirmação antes de concluir
+                            a operação.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="pergunta">
+                    <summary>
+                        O que significam os status dos agendamentos?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            <strong>Pendente:</strong> a solicitação está aguardando análise.
+                        </p>
+
+                        <p>
+                            <strong>Aprovado:</strong> a solicitação foi autorizada.
+                        </p>
+
+                        <p>
+                            <strong>Recusado:</strong> a solicitação não foi autorizada.
+                        </p>
+
+                        <p>
+                            <strong>Cancelado:</strong> o agendamento foi cancelado.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="pergunta">
+                    <summary>
+                        O que fazer se não conseguir acessar minha conta?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </summary>
+
+                    <div class="resposta">
+                        <p>
+                            Verifique se está utilizando os dados de acesso
+                            corretos e seu e-mail institucional. Caso o problema
+                            persista, procure o laboratorista no DAIC para obter orientações.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+<section class="secao-suporte">
+    <div class="icone-suporte">
+        <i class="fa-regular fa-envelope"></i>
+    </div>
+
+    <div class="texto-suporte">
+        <h2>Ainda precisa de ajuda?</h2>
+
+        <p>
+            Caso não encontre a resposta para sua dúvida ou enfrente
+            dificuldades na utilização do SALIINF, entre em contato
+            com nossa equipe pelo e-mail:
+        </p>
+
+        <a href="mailto:saliinf.daic@gmail.com" class="email-suporte">
+            <i class="fa-regular fa-envelope"></i>
+            saliinf.daic@gmail.com
+        </a>
+    </div>
+</section>
+    </main>
 </body>
 </html>
