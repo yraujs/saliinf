@@ -78,6 +78,82 @@ header p {
     border-bottom: 3px solid #76C9F6;
 }
 
+.dropdown-perfil {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.botao-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 22px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    white-space: nowrap;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.botao-perfil::-webkit-details-marker {
+    display: none;
+}
+
+.botao-perfil::marker {
+    content: "";
+}
+
+.botao-perfil:hover,
+.dropdown-perfil[open] .botao-perfil {
+    background-color: #fff;
+    color: #103B60;
+}
+
+.botao-perfil svg {
+    transition: transform 0.2s;
+}
+
+.dropdown-perfil[open] .botao-perfil svg {
+    transform: rotate(180deg);
+}
+
+.menu-perfil {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 100%;
+    min-width: 150px;
+    background-color: #fff;
+    border: 1px solid #B6D6EF;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    padding: 6px;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.menu-perfil a {
+    display: block;
+    padding: 11px 15px;
+    border-radius: 8px;
+    color: #103B60;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.menu-perfil a:hover {
+    background-color: #EAF6FF;
+}
+
 .barra-agenda {
     display: flex;
     align-items: center;
@@ -278,6 +354,10 @@ table td {
     border-bottom-left-radius: 10px;
 }
 
+nav a:hover {
+    color: #76C9F6;
+}
+
 @media (max-width: 1300px) {
     header {
         flex-wrap: wrap;
@@ -336,6 +416,11 @@ table td {
         display: none;
     }
 
+    .botao-perfil {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -372,8 +457,4 @@ table td {
     table {
         width: 95%;
     }
-}
-
-nav a:hover {
-    color: #76C9F6;
 }
