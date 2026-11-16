@@ -275,7 +275,6 @@ table tbody tr:hover {
 
 .departamento:focus {
     border-color: #103B60;
-    background-color: #D0E7FB;
 }
 
 .departamento option {
@@ -287,20 +286,47 @@ table tbody tr:hover {
 
 .status {
     display: inline-block;
-    padding: 7px 16px;
+    min-width: 125px;
+    padding: 7px 30px 7px 16px;
+    border: 1px solid transparent;
     border-radius: 20px;
+    font-size: 15px;
     font-weight: 600;
-    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.status.ativa {
+.status:has(option[value="Ativa"]:checked) {
     background-color: #D2F3DC;
     color: #176B35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23176B35' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
 }
 
-.status.bloqueada {
+.status:has(option[value="Bloqueada"]:checked) {
     background-color: #FFE5B6;
     color: #855000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23855000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.status:hover {
+    filter: brightness(0.97);
+}
+
+.status:focus {
+    border-color: currentColor;
+}
+
+.status option {
+    background-color: #FFFFFF;
+    color: #0A1F33;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .acoes {
