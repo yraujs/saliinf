@@ -114,6 +114,10 @@ body {
     display: flex;
 }
 
+.login h1{
+    color: #062642;
+}
+
 .cadastro-container {
     position: absolute;
 }
@@ -384,7 +388,6 @@ body {
     }
 }
 
-/*---------Animeção de carregamento---------*/
 .loading {
     display: flex;
     align-items: center;
@@ -412,3 +415,38 @@ body {
         transform: rotate(360deg);
     }
 }
+
+.logo{
+    display: flex;
+    gap: 50px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+.logo h1, p{
+    text-align: left;
+    margin: 10px;
+}
+
+.textos-logo {
+    margin-top: 25px;
+    color: #0A365D;
+}
+
+.logo h1{
+    font-size: 50px;
+}
+
+.logo p{
+    font-size: 16px;
+}
+
+
+.login {
+    position: relative;
+    justify-content: center;
+    padding-top: 0;
+}
+
